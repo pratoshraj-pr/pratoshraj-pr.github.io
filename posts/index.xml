@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on PR Logs</title>
+    <link>https://pratoshraj-pr.github.io/posts/</link>
+    <description>Recent content in Posts on PR Logs</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://pratoshraj-pr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://pratoshraj-pr.github.io/posts/gen_vs_disc_ml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://pratoshraj-pr.github.io/posts/gen_vs_disc_ml/</guid>
+      <description>&lt;!DOCTYPE html&gt;
+&lt;html xmlns=&#34;http://www.w3.org/1999/xhtml&#34; lang=&#34;en&#34; xml:lang=&#34;en&#34;&gt;&lt;head&gt;
+
+&lt;meta charset=&#34;utf-8&#34;&gt;
+&lt;meta name=&#34;generator&#34; content=&#34;quarto-1.5.57&#34;&gt;
+
+&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0, user-scalable=yes&#34;&gt;
+
+&lt;meta name=&#34;dcterms.date&#34; content=&#34;2024-10-09&#34;&gt;
+&lt;meta name=&#34;description&#34; content=&#34;A rigorous, ground-up treatment of what separates generative from discriminative models — covering logistic regression, Naive Bayes, and how LLMs fit the picture.&#34;&gt;
+
+&lt;title&gt;Fundamentals of Generative vs Discriminative Modeling&lt;/title&gt;
+&lt;style&gt;
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type=&#34;checkbox&#34;] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+&lt;/style&gt;
+
+
+&lt;script src=&#34;gen_vs_disc_ml_files/libs/clipboard/clipboard.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;gen_vs_disc_ml_files/libs/quarto-html/tabby.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;gen_vs_disc_ml_files/libs/quarto-html/popper.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;gen_vs_disc_ml_files/libs/quarto-html/tippy.umd.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;gen_vs_disc_ml_files/libs/quarto-html/anchor.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;gen_vs_disc_ml_files/libs/quarto-html/tippy.css&#34; rel=&#34;stylesheet&#34;&gt;
+&lt;link href=&#34;gen_vs_disc_ml_files/libs/quarto-html/light-border.css&#34; rel=&#34;stylesheet&#34;&gt;
+&lt;link href=&#34;gen_vs_disc_ml_files/libs/quarto-html/quarto-html.min.css&#34; rel=&#34;stylesheet&#34; data-mode=&#34;light&#34;&gt;
+&lt;link href=&#34;gen_vs_disc_ml_files/libs/quarto-html/quarto-syntax-highlighting.css&#34; rel=&#34;stylesheet&#34; id=&#34;quarto-text-highlighting-styles&#34;&gt;
+
+  &lt;script src=&#34;https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6&#34;&gt;&lt;/script&gt;
+  &lt;/head&gt;&lt;body&gt;true
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+const typesetMath = (el) =&gt; {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName(&#34;math&#34;);
+    var macros = [];
+    for (var i = 0; i &lt; mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == &#34;SPAN&#34;) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains(&#39;display&#39;),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+&lt;/script&gt;
+
+
+
+
+
+
+&lt;header id=&#34;title-block-header&#34;&gt;
+&lt;h1 class=&#34;title&#34;&gt;Fundamentals of Generative vs Discriminative Modeling&lt;/h1&gt;
+
+&lt;p class=&#34;date&#34;&gt;2024-10-09&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

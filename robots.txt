@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://pratoshraj-pr.github.io/sitemap.xml
