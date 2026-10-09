@@ -1,0 +1,12 @@
+# Hugo build output
+/public/
+/resources/
+
+# Quarto render cache and output inside quarto/
+/quarto/.quarto/
+/quarto/_freeze/
+
+# OS / editor
+.DS_Store
+.vscode/
+*.swp

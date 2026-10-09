@@ -1,0 +1,54 @@
+name: Deploy PR Logs to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:   # allow manual trigger from the Actions UI
+
+# Grant write access for the GITHUB_TOKEN to push to gh-pages
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive   # pulls in the PaperMod theme submodule
+          fetch-depth: 0          # full history needed for .GitInfo in Hugo
+
+      # ── 2. Install Quarto ────────────────────────────────────────────────────
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.5.57"       # pin a stable version; bump here to upgrade
+
+      # ── 3. Render .qmd → Hugo content/posts ─────────────────────────────────
+      - name: Render Quarto sources
+        run: |
+          cd quarto
+          quarto render .
+
+      # ── 4. Install Hugo ──────────────────────────────────────────────────────
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.136.2"
+          extended: true          # needed for SCSS in some themes
+
+      # ── 5. Build Hugo site ───────────────────────────────────────────────────
+      - name: Build Hugo site
+        run: hugo --minify
+
+      # ── 6. Deploy to gh-pages branch ─────────────────────────────────────────
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public        # Hugo output directory
+          publish_branch: gh-pages     # GitHub Pages source branch
+          cname: pratoshraj-pr.github.io

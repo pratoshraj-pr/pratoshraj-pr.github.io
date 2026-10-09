@@ -1,0 +1,23 @@
+project:
+  type: default
+  output-dir: ../content/posts  # Quarto renders directly into Hugo's posts folder
+
+format:
+  html:
+    theme: none          # Hugo/PaperMod handles all styling
+    toc: true
+    toc-depth: 4
+    number-sections: false
+    html-math-method: mathjax
+    embed-resources: false
+    self-contained: false
+    anchor-sections: true
+    code-fold: false
+    code-tools: false
+    df-print: default
+
+execute:
+  freeze: auto           # cache render outputs; re-render only when source changes
+  echo: true
+  warning: false
+  message: false
