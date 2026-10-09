@@ -1,6 +1,11 @@
 baseURL: "https://pratoshraj-pr.github.io/"
-languageCode: "en-us"
+locale: "en-us"
 title: "PR Logs"
+
+security:
+  allowContent:
+    - ".*"
+
 theme: "PaperMod"
 pagination:
   pagerSize: 10

@@ -1,6 +1,7 @@
 # Hugo build output
 /public/
 /resources/
+.hugo_build.lock
 
 # Quarto render cache and output inside quarto/
 /quarto/.quarto/
