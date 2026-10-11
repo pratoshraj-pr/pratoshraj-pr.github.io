@@ -1,6 +1,6 @@
 ---
 title: "Generative vs Discriminative Models: From Naive Bayes to LLMs"
-date: 2024-10-09
+date: 2026-10-09
 draft: false
 tags:
   - machine-learning
