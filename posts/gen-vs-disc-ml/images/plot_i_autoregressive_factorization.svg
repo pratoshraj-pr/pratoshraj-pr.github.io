@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-labelledby="t d">
+<title id="t">Autoregressive factorization of a text probability</title>
+<desc id="d">Three bar charts left to right, each a categorical distribution over the same ten-word vocabulary. Stage 1, P(x1), highlights The at 0.01 with context empty. Stage 2, P(x2 given The), highlights cat at 0.08 with context The. Stage 3, P(x3 given The cat), highlights sat at 0.70 with context The cat. Arrows feed each chosen token back into the next context. Below, P(The cat sat) equals 0.01 times 0.08 times 0.70, which is 0.00056.</desc>
+<style>
+  :root { --bg:#ffffff; --ink:#1f2330; --muted:#5b6275; --line:#8a92a6; --sel:#1f8a4c; }
+  text { font-family: Georgia, 'Times New Roman', serif; fill: var(--ink); font-size: 15px; }
+  .sans { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .small { font-size: 12px; fill: var(--muted); }
+  .i { font-style: italic; }
+  .lab { font-size: 13px; }
+  .arrow { fill: none; stroke: var(--sel); stroke-width: 2; }
+</style>
+<defs><marker id="head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1,1 L9,5 L1,9 Z" fill="#1f8a4c"/></marker></defs>
+<rect width="1200" height="700" rx="10" fill="var(--bg)"/>
+<text x="600.0" y="40" text-anchor="middle" style="font-size:21px">The model answers <tspan class="i">“what comes next?”</tspan> again and again</text>
+<text x="600.0" y="64" text-anchor="middle" class="small sans" style="font-size:13.5px">Each step is a categorical distribution over the vocabulary · the chosen token is appended to the context · same ten words on every x-axis</text>
+<rect x="22" y="86" width="346" height="372" rx="10" fill="#f5f6f9" stroke="#dfe2ea"/>
+<circle cx="44" cy="110" r="11" fill="#1f8a4c"/><text x="44" y="115" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">1</text>
+<text x="64" y="116" style="font-size:20px"><tspan class="i">P</tspan>(<tspan class="i">x</tspan><tspan font-size="12" dy="3">1</tspan><tspan dy="-3">)</tspan></text>
+<rect x="30" y="130" width="330" height="40" rx="8" fill="#fff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="42" y="155" class="sans small" style="font-size:12.5px;font-weight:600">Context</text>
+<rect x="112" y="137" width="64" height="26" rx="6" fill="#eceef3" stroke="#c4c9d6"/><text x="144" y="155" text-anchor="middle" class="sans" style="font-size:13px;fill:var(--muted)">⟨start⟩</text>
+<line x1="64" y1="392" x2="350" y2="392" stroke="var(--line)" stroke-width="1.3"/>
+<line x1="64" y1="222" x2="64" y2="392" stroke="var(--line)" stroke-width="1.3"/>
+<text x="59" y="226" text-anchor="end" class="sans small" style="font-size:11px">0.012</text>
+<text x="59" y="396" text-anchor="end" class="sans small" style="font-size:11px">0</text>
+<rect x="71" y="253.2" width="22" height="138.8" rx="2" fill="#1f8a4c"/>
+<text x="82.0" y="409" text-anchor="middle" class="lab" style="font-weight:700;fill:#1f8a4c">The</text>
+<text x="82.0" y="246.2" text-anchor="middle" class="sans" style="font-size:13.5px;font-weight:700;fill:#1f8a4c">0.01</text>
+<rect x="99" y="386.4" width="22" height="5.6" rx="2" fill="#b7bdcc"/>
+<text x="110.0" y="409" text-anchor="middle" class="lab" style="">cat</text>
+<rect x="127" y="387.8" width="22" height="4.2" rx="2" fill="#b7bdcc"/>
+<text x="138.0" y="409" text-anchor="middle" class="lab" style="">dog</text>
+<rect x="155" y="350.4" width="22" height="41.6" rx="2" fill="#b7bdcc"/>
+<text x="166.0" y="409" text-anchor="middle" class="lab" style="">big</text>
+<rect x="183" y="378.1" width="22" height="13.9" rx="2" fill="#b7bdcc"/>
+<text x="194.0" y="409" text-anchor="middle" class="lab" style="">red</text>
+<rect x="211" y="389.2" width="22" height="2.8" rx="2" fill="#b7bdcc"/>
+<text x="222.0" y="409" text-anchor="middle" class="lab" style="">sat</text>
+<rect x="239" y="390.0" width="22" height="2.0" rx="2" fill="#b7bdcc"/>
+<text x="250.0" y="409" text-anchor="middle" class="lab" style="">ran</text>
+<rect x="267" y="385.1" width="22" height="6.9" rx="2" fill="#b7bdcc"/>
+<text x="278.0" y="409" text-anchor="middle" class="lab" style="">is</text>
+<rect x="295" y="390.0" width="22" height="2.0" rx="2" fill="#b7bdcc"/>
+<text x="306.0" y="409" text-anchor="middle" class="lab" style="">ate</text>
+<rect x="323" y="389.2" width="22" height="2.8" rx="2" fill="#b7bdcc"/>
+<text x="334.0" y="409" text-anchor="middle" class="lab" style="">on</text>
+<text x="195.0" y="196" text-anchor="middle" class="small sans" style="font-size:11.5px">other tokens in |V| hold the rest · all bars sum to 1</text>
+<path d="M82.0,416 L82.0,432 Q82.0,444 94.0,444 L385,444 Q397,444 397,432 L397,162 Q397,150 409,150 L432,150" class="arrow" marker-end="url(#head)"/>
+<rect x="427" y="86" width="346" height="372" rx="10" fill="#f5f6f9" stroke="#dfe2ea"/>
+<circle cx="449" cy="110" r="11" fill="#1f8a4c"/><text x="449" y="115" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">2</text>
+<text x="469" y="116" style="font-size:20px"><tspan class="i">P</tspan>(<tspan class="i">x</tspan><tspan font-size="12" dy="3">2</tspan><tspan dy="-3"> | The)</tspan></text>
+<rect x="435" y="130" width="330" height="40" rx="8" fill="#fff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="447" y="155" class="sans small" style="font-size:12.5px;font-weight:600">Context</text>
+<rect x="517" y="137" width="52" height="26" rx="6" fill="#e6f4ec" stroke="#1f8a4c" stroke-width="1.8"/><text x="543" y="156" text-anchor="middle" style="font-size:15px">The</text>
+<line x1="469" y1="392" x2="755" y2="392" stroke="var(--line)" stroke-width="1.3"/>
+<line x1="469" y1="222" x2="469" y2="392" stroke="var(--line)" stroke-width="1.3"/>
+<text x="464" y="226" text-anchor="end" class="sans small" style="font-size:11px">0.10</text>
+<text x="464" y="396" text-anchor="end" class="sans small" style="font-size:11px">0</text>
+<rect x="476" y="390.0" width="22" height="2.0" rx="2" fill="#b7bdcc"/>
+<text x="487.0" y="409" text-anchor="middle" class="lab" style="">The</text>
+<rect x="504" y="258.7" width="22" height="133.3" rx="2" fill="#1f8a4c"/>
+<text x="515.0" y="409" text-anchor="middle" class="lab" style="font-weight:700;fill:#1f8a4c">cat</text>
+<text x="515.0" y="251.7" text-anchor="middle" class="sans" style="font-size:13.5px;font-weight:700;fill:#1f8a4c">0.08</text>
+<rect x="532" y="292.0" width="22" height="100.0" rx="2" fill="#b7bdcc"/>
+<text x="543.0" y="409" text-anchor="middle" class="lab" style="">dog</text>
+<rect x="560" y="308.7" width="22" height="83.3" rx="2" fill="#b7bdcc"/>
+<text x="571.0" y="409" text-anchor="middle" class="lab" style="">big</text>
+<rect x="588" y="358.7" width="22" height="33.3" rx="2" fill="#b7bdcc"/>
+<text x="599.0" y="409" text-anchor="middle" class="lab" style="">red</text>
+<rect x="616" y="390.0" width="22" height="2.0" rx="2" fill="#b7bdcc"/>
+<text x="627.0" y="409" text-anchor="middle" class="lab" style="">sat</text>
+<rect x="644" y="390.0" width="22" height="2.0" rx="2" fill="#b7bdcc"/>
+<text x="655.0" y="409" text-anchor="middle" class="lab" style="">ran</text>
+<rect x="672" y="390.0" width="22" height="2.0" rx="2" fill="#b7bdcc"/>
+<text x="683.0" y="409" text-anchor="middle" class="lab" style="">is</text>
+<rect x="700" y="390.0" width="22" height="2.0" rx="2" fill="#b7bdcc"/>
+<text x="711.0" y="409" text-anchor="middle" class="lab" style="">ate</text>
+<rect x="728" y="390.0" width="22" height="2.0" rx="2" fill="#b7bdcc"/>
+<text x="739.0" y="409" text-anchor="middle" class="lab" style="">on</text>
+<text x="600.0" y="196" text-anchor="middle" class="small sans" style="font-size:11.5px">other tokens in |V| hold the rest · all bars sum to 1</text>
+<path d="M515.0,416 L515.0,432 Q515.0,444 527.0,444 L790,444 Q802,444 802,432 L802,162 Q802,150 814,150 L837,150" class="arrow" marker-end="url(#head)"/>
+<rect x="832" y="86" width="346" height="372" rx="10" fill="#f5f6f9" stroke="#dfe2ea"/>
+<circle cx="854" cy="110" r="11" fill="#1f8a4c"/><text x="854" y="115" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">3</text>
+<text x="874" y="116" style="font-size:20px"><tspan class="i">P</tspan>(<tspan class="i">x</tspan><tspan font-size="12" dy="3">3</tspan><tspan dy="-3"> | The cat)</tspan></text>
+<rect x="840" y="130" width="330" height="40" rx="8" fill="#fff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="852" y="155" class="sans small" style="font-size:12.5px;font-weight:600">Context</text>
+<rect x="922" y="137" width="52" height="26" rx="6" fill="#fff" stroke="#c4c9d6" stroke-width="1.2"/><text x="948" y="156" text-anchor="middle" style="font-size:15px">The</text>
+<rect x="982" y="137" width="52" height="26" rx="6" fill="#e6f4ec" stroke="#1f8a4c" stroke-width="1.8"/><text x="1008" y="156" text-anchor="middle" style="font-size:15px">cat</text>
+<line x1="874" y1="392" x2="1160" y2="392" stroke="var(--line)" stroke-width="1.3"/>
+<line x1="874" y1="222" x2="874" y2="392" stroke="var(--line)" stroke-width="1.3"/>
+<text x="869" y="226" text-anchor="end" class="sans small" style="font-size:11px">0.80</text>
+<text x="869" y="396" text-anchor="end" class="sans small" style="font-size:11px">0</text>
+<rect x="881" y="390.0" width="22" height="2.0" rx="2" fill="#b7bdcc"/>
+<text x="892.0" y="409" text-anchor="middle" class="lab" style="">The</text>
+<rect x="909" y="390.0" width="22" height="2.0" rx="2" fill="#b7bdcc"/>
+<text x="920.0" y="409" text-anchor="middle" class="lab" style="">cat</text>
+<rect x="937" y="390.0" width="22" height="2.0" rx="2" fill="#b7bdcc"/>
+<text x="948.0" y="409" text-anchor="middle" class="lab" style="">dog</text>
+<rect x="965" y="390.0" width="22" height="2.0" rx="2" fill="#b7bdcc"/>
+<text x="976.0" y="409" text-anchor="middle" class="lab" style="">big</text>
+<rect x="993" y="390.0" width="22" height="2.0" rx="2" fill="#b7bdcc"/>
+<text x="1004.0" y="409" text-anchor="middle" class="lab" style="">red</text>
+<rect x="1021" y="246.2" width="22" height="145.8" rx="2" fill="#1f8a4c"/>
+<text x="1032.0" y="409" text-anchor="middle" class="lab" style="font-weight:700;fill:#1f8a4c">sat</text>
+<text x="1032.0" y="239.2" text-anchor="middle" class="sans" style="font-size:13.5px;font-weight:700;fill:#1f8a4c">0.70</text>
+<rect x="1049" y="375.3" width="22" height="16.7" rx="2" fill="#b7bdcc"/>
+<text x="1060.0" y="409" text-anchor="middle" class="lab" style="">ran</text>
+<rect x="1077" y="379.5" width="22" height="12.5" rx="2" fill="#b7bdcc"/>
+<text x="1088.0" y="409" text-anchor="middle" class="lab" style="">is</text>
+<rect x="1105" y="383.7" width="22" height="8.3" rx="2" fill="#b7bdcc"/>
+<text x="1116.0" y="409" text-anchor="middle" class="lab" style="">ate</text>
+<rect x="1133" y="385.8" width="22" height="6.2" rx="2" fill="#b7bdcc"/>
+<text x="1144.0" y="409" text-anchor="middle" class="lab" style="">on</text>
+<text x="1005.0" y="196" text-anchor="middle" class="small sans" style="font-size:11.5px">other tokens in |V| hold the rest · all bars sum to 1</text>
+<text x="405" y="296" class="small sans" style="font-size:11px;fill:#1f8a4c;font-weight:600">append</text>
+<text x="810" y="296" class="small sans" style="font-size:11px;fill:#1f8a4c;font-weight:600">append</text>
+<rect x="75.0" y="500" width="240" height="66" rx="10" fill="#e6f4ec" stroke="#1f8a4c" stroke-width="1.6"/>
+<circle cx="89.0" cy="514" r="9" fill="#1f8a4c"/><text x="89.0" y="518" text-anchor="middle" class="sans" style="fill:#fff;font-size:11px;font-weight:700">1</text>
+<text x="195.0" y="528" text-anchor="middle" style="font-size:18px"><tspan class="i">P</tspan>(The)</text>
+<text x="195.0" y="554" text-anchor="middle" class="sans" style="font-size:18px;font-weight:700;fill:#1f8a4c">0.01</text>
+<text x="397" y="540" text-anchor="middle" style="font-size:26px">×</text>
+<rect x="480.0" y="500" width="240" height="66" rx="10" fill="#e6f4ec" stroke="#1f8a4c" stroke-width="1.6"/>
+<circle cx="494.0" cy="514" r="9" fill="#1f8a4c"/><text x="494.0" y="518" text-anchor="middle" class="sans" style="fill:#fff;font-size:11px;font-weight:700">2</text>
+<text x="600.0" y="528" text-anchor="middle" style="font-size:18px"><tspan class="i">P</tspan>(cat | The)</text>
+<text x="600.0" y="554" text-anchor="middle" class="sans" style="font-size:18px;font-weight:700;fill:#1f8a4c">0.08</text>
+<text x="802" y="540" text-anchor="middle" style="font-size:26px">×</text>
+<rect x="885.0" y="500" width="240" height="66" rx="10" fill="#e6f4ec" stroke="#1f8a4c" stroke-width="1.6"/>
+<circle cx="899.0" cy="514" r="9" fill="#1f8a4c"/><text x="899.0" y="518" text-anchor="middle" class="sans" style="fill:#fff;font-size:11px;font-weight:700">3</text>
+<text x="1005.0" y="528" text-anchor="middle" style="font-size:18px"><tspan class="i">P</tspan>(sat | The cat)</text>
+<text x="1005.0" y="554" text-anchor="middle" class="sans" style="font-size:18px;font-weight:700;fill:#1f8a4c">0.70</text>
+<text x="22" y="486" class="sans small" style="font-size:12px;font-weight:600">CHAIN RULE: THE PRODUCT OF THE THREE HIGHLIGHTED BARS</text>
+<text x="600.0" y="604" text-anchor="middle" style="font-size:21px"><tspan class="i">P</tspan>(The cat sat) = 0.01 × 0.08 × 0.70 = <tspan style="font-weight:700;fill:#1f8a4c">0.00056</tspan></text>
+<text x="600.0" y="676" text-anchor="middle" class="i" style="font-size:16px">Each step is a small problem: one distribution over |V| tokens. The product of those answers is the probability of the whole text.</text>
+</svg>

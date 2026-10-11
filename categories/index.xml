@@ -4,8 +4,21 @@
     <title>Categories on PR Logs</title>
     <link>https://pratoshraj-pr.github.io/categories/</link>
     <description>Recent content in Categories on PR Logs</description>
+    <image>
+      <title>PR Logs</title>
+      <url>https://pratoshraj-pr.github.io/images/og-default.png</url>
+      <link>https://pratoshraj-pr.github.io/images/og-default.png</link>
+    </image>
     <generator>Hugo</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://pratoshraj-pr.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine Learning</title>
+      <link>https://pratoshraj-pr.github.io/categories/machine-learning/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://pratoshraj-pr.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1220 910" width="1220" height="910" role="img" aria-labelledby="t d">
+<title id="t">Four generations of the function g-theta, one fixed softmax head</title>
+<desc id="d">Four rows showing how a prefix becomes next-token probabilities P of x_j given the earlier tokens. Row 1, n-gram counting: a window of the last n minus 1 tokens indexes a lookup table whose row is the stored distribution, fitted by counting; there is no representation h_j and no softmax head. Row 2, neural n-gram: the window tokens become embedding vectors fed through a neural network to h_j, then a linear and softmax head. Row 3, RNN or LSTM: tokens are read one at a time and each updates a hidden state in a chain to h_j, then the same head. Row 4, Transformer: every earlier token connects to h_j with attention arrows of varying thickness, then the same head. From row 2 on, only g-theta changes; the softmax head and cross-entropy loss stay the same.</desc>
+<style>
+  :root { --bg:#ffffff; --ink:#1f2330; --muted:#5b6275; --line:#8a92a6; }
+  text { font-family: Georgia, 'Times New Roman', serif; fill: var(--ink); font-size: 15px; }
+  .sans { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .small { font-size: 12px; fill: var(--muted); }
+  .i { font-style: italic; }
+  .ar { fill: none; stroke: var(--line); stroke-width: 1.8; }
+</style>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1,1 L9,5 L1,9 Z" fill="#8a92a6"/></marker>
+<marker id="ahp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1,1 L9,5 L1,9 Z" fill="#7a5aa6"/></marker>
+</defs>
+<rect width="1220" height="910" rx="10" fill="var(--bg)"/>
+<text x="610.0" y="40" text-anchor="middle" style="font-size:22px">Four ways to get <tspan class="i">P</tspan>(<tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="14"><tspan class="i">j</tspan></tspan> | <tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="14">&lt;<tspan class="i">j</tspan></tspan>): counting, then a learned <tspan class="i">g</tspan><tspan baseline-shift="sub" font-size="14">θ</tspan></text>
+<text x="610.0" y="64" text-anchor="middle" class="small sans" style="font-size:13.5px">row 1 stores the distributions directly and fits them by counting (MLE) · rows 2–4 compute a vector <tspan class="i" style="font-family:Georgia,serif">h</tspan><tspan baseline-shift="sub" font-size="10.5" style="font-family:Georgia,serif" class="i">j</tspan> from the prefix, then one shared softmax head</text>
+<text x="235" y="104" class="sans" style="font-size:13px;font-weight:700;fill:#7a5aa6"><tspan>g</tspan><tspan baseline-shift="sub" font-size="14">θ</tspan>: PREFIX → h<tspan baseline-shift="sub" font-size="10">j</tspan><tspan style="font-weight:400;fill:var(--muted)">   ·  rows 2–4: this is what changes</tspan></text>
+<text x="880" y="104" class="sans" style="font-size:13px;font-weight:700;fill:#1f8a4c">NEXT-TOKEN DISTRIBUTION<tspan style="font-weight:400;fill:var(--muted)"> </tspan></text>
+<rect x="20" y="126" width="1180" height="172" rx="12" fill="#f5f6f9" stroke="#dfe2ea"/>
+<circle cx="46" cy="162" r="12" fill="#7a5aa6"/><text x="46" y="167" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">1</text>
+<text x="68" y="167" class="sans" style="font-size:16px;font-weight:700">n-gram</text>
+<text x="68" y="187" class="sans" style="font-size:14px;fill:var(--muted)">(counting)</text>
+<rect x="36" y="210" width="88" height="26" rx="13" fill="#fff" stroke="#c4c9d6"/><text x="80" y="228" text-anchor="middle" class="sans small" style="font-size:12px;font-weight:600">Pre-neural</text>
+<circle cx="242" cy="272" r="8" fill="#b5472f"/><text x="242" y="276.5" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">−</text>
+<text x="257" y="276.5" class="sans" style="font-size:12.5px">Fixed window</text>
+<circle cx="366.2" cy="272" r="8" fill="#b5472f"/><text x="366.2" y="276.5" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">−</text>
+<text x="381.2" y="276.5" class="sans" style="font-size:12.5px">No parameter sharing across contexts</text>
+<circle cx="642.8" cy="272" r="8" fill="#b5472f"/><text x="642.8" y="276.5" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">−</text>
+<text x="657.8" y="276.5" class="sans" style="font-size:12.5px">No similarity between tokens</text>
+<g opacity="0.45"><rect x="243.0" y="173" width="38" height="30" rx="7" fill="#eceef3" stroke="#8a92a6" stroke-width="1.3"/><text x="262" y="193" text-anchor="middle" style="font-size:15px">⋯</text></g>
+<g opacity="0.45"><rect x="294.0" y="173" width="56" height="30" rx="7" fill="#fff" stroke="#8a92a6" stroke-dasharray="4 3" stroke-width="1.3"/><text x="322" y="193" text-anchor="middle" style="font-size:15px"><tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5">j−3</tspan></text></g>
+<rect x="368" y="158" width="168" height="60" rx="10" fill="none" stroke="#7a5aa6" stroke-width="1.6" stroke-dasharray="5 4"/>
+<g><rect x="384.0" y="173" width="56" height="30" rx="7" fill="#eceef3" stroke="#8a92a6" stroke-width="1.3"/><text x="412" y="193" text-anchor="middle" style="font-size:15px"><tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5">j−2</tspan></text></g>
+<g><rect x="464.0" y="173" width="56" height="30" rx="7" fill="#eceef3" stroke="#8a92a6" stroke-width="1.3"/><text x="492" y="193" text-anchor="middle" style="font-size:15px"><tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5">j−1</tspan></text></g>
+<text x="452" y="234" text-anchor="middle" class="small sans" style="font-size:11px">last n−1 tokens</text>
+<path d="M540,188 L590,188" class="ar"  marker-end="url(#ah)"/>
+<rect x="598" y="158" width="22" height="15" fill="#fff" stroke="#c4c9d6" stroke-width="1"/>
+<rect x="620" y="158" width="22" height="15" fill="#fff" stroke="#c4c9d6" stroke-width="1"/>
+<rect x="642" y="158" width="22" height="15" fill="#fff" stroke="#c4c9d6" stroke-width="1"/>
+<rect x="598" y="173" width="22" height="15" fill="#fff" stroke="#c4c9d6" stroke-width="1"/>
+<rect x="620" y="173" width="22" height="15" fill="#fff" stroke="#c4c9d6" stroke-width="1"/>
+<rect x="642" y="173" width="22" height="15" fill="#fff" stroke="#c4c9d6" stroke-width="1"/>
+<rect x="598" y="188" width="22" height="15" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.6"/>
+<rect x="620" y="188" width="22" height="15" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.6"/>
+<rect x="642" y="188" width="22" height="15" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.6"/>
+<rect x="598" y="203" width="22" height="15" fill="#fff" stroke="#c4c9d6" stroke-width="1"/>
+<rect x="620" y="203" width="22" height="15" fill="#fff" stroke="#c4c9d6" stroke-width="1"/>
+<rect x="642" y="203" width="22" height="15" fill="#fff" stroke="#c4c9d6" stroke-width="1"/>
+<text x="631" y="234" text-anchor="middle" class="small sans" style="font-size:11px">lookup table: one stored distribution per context</text>
+<path d="M678,188 L878,188" class="ar"  marker-end="url(#ah)"/>
+<rect x="882" y="142" width="308" height="140" rx="12" fill="#e6f4ec" stroke="#1f8a4c" stroke-width="1.5"/>
+<text x="1036" y="164" text-anchor="middle" class="sans" style="font-size:12px;font-weight:600;fill:#1f8a4c">read off the table row</text>
+<text x="1036" y="181" text-anchor="middle" class="small sans" style="font-size:11px">counts → relative frequencies (MLE)</text>
+<rect x="902" y="244" width="10" height="14" rx="1.5" fill="#a9d3bc"/>
+<rect x="916" y="232" width="10" height="26" rx="1.5" fill="#a9d3bc"/>
+<rect x="930" y="206" width="10" height="52" rx="1.5" fill="#1f8a4c"/>
+<rect x="944" y="238" width="10" height="20" rx="1.5" fill="#a9d3bc"/>
+<rect x="958" y="248" width="10" height="10" rx="1.5" fill="#a9d3bc"/>
+<rect x="972" y="242" width="10" height="16" rx="1.5" fill="#a9d3bc"/>
+<text x="1100" y="216" text-anchor="middle" style="font-size:15.5px"><tspan class="i">P</tspan>(<tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5"><tspan class="i">j</tspan></tspan> | <tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5"><tspan class="i">j</tspan>−1</tspan>, …, <tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5"><tspan class="i">j</tspan>−<tspan class="i">n</tspan>+1</tspan>)</text>
+<rect x="20" y="308" width="1180" height="172" rx="12" fill="#f5f6f9" stroke="#dfe2ea"/>
+<circle cx="46" cy="344" r="12" fill="#7a5aa6"/><text x="46" y="349" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">2</text>
+<text x="68" y="349" class="sans" style="font-size:16px;font-weight:700">Neural n-gram</text>
+<text x="68" y="369" class="sans" style="font-size:14px;fill:var(--muted)">(embeddings)</text>
+<rect x="36" y="392" width="161" height="26" rx="13" fill="#fff" stroke="#c4c9d6"/><text x="116" y="410" text-anchor="middle" class="sans small" style="font-size:12px;font-weight:600">~2003 (Bengio et al.)</text>
+<circle cx="242" cy="454" r="8" fill="#b5472f"/><text x="242" y="458.5" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">−</text>
+<text x="257" y="458.5" class="sans" style="font-size:12.5px">Fixed window</text>
+<circle cx="366.2" cy="454" r="8" fill="#1f8a4c"/><text x="366.2" y="458.5" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">+</text>
+<text x="381.2" y="458.5" class="sans" style="font-size:12.5px">Similar words → similar vectors (generalization)</text>
+<g opacity="0.45"><rect x="243.0" y="355" width="38" height="30" rx="7" fill="#eceef3" stroke="#8a92a6" stroke-width="1.3"/><text x="262" y="375" text-anchor="middle" style="font-size:15px">⋯</text></g>
+<rect x="300" y="318" width="116" height="104" rx="10" fill="none" stroke="#7a5aa6" stroke-width="1.6" stroke-dasharray="5 4"/>
+<g><rect x="330.0" y="329" width="56" height="30" rx="7" fill="#eceef3" stroke="#8a92a6" stroke-width="1.3"/><text x="358" y="349" text-anchor="middle" style="font-size:15px"><tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5">j−2</tspan></text></g>
+<g><rect x="330.0" y="381" width="56" height="30" rx="7" fill="#eceef3" stroke="#8a92a6" stroke-width="1.3"/><text x="358" y="401" text-anchor="middle" style="font-size:15px"><tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5">j−1</tspan></text></g>
+<path d="M394,344 L452,344" class="ar"  marker-end="url(#ah)"/>
+<path d="M394,396 L452,396" class="ar"  marker-end="url(#ah)"/>
+<rect x="458" y="337" width="14" height="14" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1"/><rect x="472" y="337" width="14" height="14" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1"/><rect x="486" y="337" width="14" height="14" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1"/><rect x="500" y="337" width="14" height="14" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1"/><rect x="514" y="337" width="14" height="14" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1"/>
+<rect x="458" y="389" width="14" height="14" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1"/><rect x="472" y="389" width="14" height="14" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1"/><rect x="486" y="389" width="14" height="14" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1"/><rect x="500" y="389" width="14" height="14" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1"/><rect x="514" y="389" width="14" height="14" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1"/>
+<text x="493" y="428" text-anchor="middle" class="small sans" style="font-size:11px">embedding vectors</text>
+<path d="M534,344 L586,360" class="ar"  marker-end="url(#ah)"/>
+<path d="M534,396 L586,380" class="ar"  marker-end="url(#ah)"/>
+<line x1="606" y1="346" x2="650" y2="338" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="606" y1="346" x2="650" y2="359" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="606" y1="346" x2="650" y2="381" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="606" y1="346" x2="650" y2="402" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="606" y1="370" x2="650" y2="338" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="606" y1="370" x2="650" y2="359" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="606" y1="370" x2="650" y2="381" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="606" y1="370" x2="650" y2="402" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="606" y1="394" x2="650" y2="338" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="606" y1="394" x2="650" y2="359" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="606" y1="394" x2="650" y2="381" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="606" y1="394" x2="650" y2="402" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="650" y1="338" x2="694" y2="356" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="650" y1="338" x2="694" y2="384" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="650" y1="359" x2="694" y2="356" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="650" y1="359" x2="694" y2="384" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="650" y1="381" x2="694" y2="356" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="650" y1="381" x2="694" y2="384" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="650" y1="402" x2="694" y2="356" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<line x1="650" y1="402" x2="694" y2="384" stroke="#7a5aa6" stroke-opacity=".35" stroke-width="1"/>
+<circle cx="606" cy="346" r="6.5" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.3"/>
+<circle cx="606" cy="370" r="6.5" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.3"/>
+<circle cx="606" cy="394" r="6.5" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.3"/>
+<circle cx="650" cy="338" r="6.5" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.3"/>
+<circle cx="650" cy="359" r="6.5" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.3"/>
+<circle cx="650" cy="381" r="6.5" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.3"/>
+<circle cx="650" cy="402" r="6.5" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.3"/>
+<circle cx="694" cy="356" r="6.5" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.3"/>
+<circle cx="694" cy="384" r="6.5" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.3"/>
+<text x="650" y="428" text-anchor="middle" class="small sans" style="font-size:11px">neural network</text>
+<path d="M710,370 L764,370" class="ar"  marker-end="url(#ah)"/>
+<rect x="770" y="353" width="60" height="34" rx="9" fill="#7a5aa6"/><text x="800" y="376" text-anchor="middle" style="fill:#fff;font-size:17px"><tspan class="i">h</tspan><tspan baseline-shift="sub" font-size="10.5">j</tspan></text>
+<path d="M834,370 L878,370" class="ar"  marker-end="url(#ah)"/>
+<rect x="882" y="324" width="308" height="140" rx="12" fill="#e6f4ec" stroke="#1f8a4c" stroke-width="1.5"/>
+<text x="1036" y="346" text-anchor="middle" class="sans" style="font-size:12px;font-weight:600;fill:#1f8a4c">linear + softmax</text>
+<rect x="902" y="426" width="10" height="14" rx="1.5" fill="#a9d3bc"/>
+<rect x="916" y="414" width="10" height="26" rx="1.5" fill="#a9d3bc"/>
+<rect x="930" y="388" width="10" height="52" rx="1.5" fill="#1f8a4c"/>
+<rect x="944" y="420" width="10" height="20" rx="1.5" fill="#a9d3bc"/>
+<rect x="958" y="430" width="10" height="10" rx="1.5" fill="#a9d3bc"/>
+<rect x="972" y="424" width="10" height="16" rx="1.5" fill="#a9d3bc"/>
+<text x="1100" y="398" text-anchor="middle" style="font-size:15.5px"><tspan class="i">P</tspan>(<tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5"><tspan class="i">j</tspan></tspan> | <tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5"><tspan class="i">j</tspan>−1</tspan>, …, <tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5"><tspan class="i">j</tspan>−<tspan class="i">n</tspan>+1</tspan>)</text>
+<rect x="20" y="490" width="1180" height="172" rx="12" fill="#f5f6f9" stroke="#dfe2ea"/>
+<circle cx="46" cy="526" r="12" fill="#7a5aa6"/><text x="46" y="531" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">3</text>
+<text x="68" y="531" class="sans" style="font-size:16px;font-weight:700">RNN / LSTM</text>
+<rect x="36" y="574" width="150" height="26" rx="13" fill="#fff" stroke="#c4c9d6"/><text x="111" y="592" text-anchor="middle" class="sans small" style="font-size:12px;font-weight:600">1990 · RNN-LM 2010</text>
+<circle cx="242" cy="636" r="8" fill="#1f8a4c"/><text x="242" y="640.5" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">+</text>
+<text x="257" y="640.5" class="sans" style="font-size:12.5px">Variable-length context</text>
+<circle cx="436.04999999999995" cy="636" r="8" fill="#b5472f"/><text x="436.04999999999995" y="640.5" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">−</text>
+<text x="451.04999999999995" y="640.5" class="sans" style="font-size:12.5px">Sequential (slow training)</text>
+<circle cx="649.15" cy="636" r="8" fill="#b5472f"/><text x="649.15" y="640.5" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">−</text>
+<text x="664.15" y="640.5" class="sans" style="font-size:12.5px">Long-range dependencies hard</text>
+<circle cx="290" cy="538" r="19" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.6"/><text x="290" y="544" text-anchor="middle" style="font-size:15px"><tspan class="i">h</tspan><tspan baseline-shift="sub" font-size="10.5">2</tspan></text>
+<g><rect x="268.0" y="591" width="44" height="30" rx="7" fill="#eceef3" stroke="#8a92a6" stroke-width="1.3"/><text x="290" y="611" text-anchor="middle" style="font-size:15px"><tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5">1</tspan></text></g>
+<path d="M290,590 L290,560" class="ar" style="stroke:#7a5aa6" marker-end="url(#ahp)"/>
+<circle cx="440" cy="538" r="19" fill="#eee8f6" stroke="#7a5aa6" stroke-width="1.6"/><text x="440" y="544" text-anchor="middle" style="font-size:15px"><tspan class="i">h</tspan><tspan baseline-shift="sub" font-size="10.5">3</tspan></text>
+<g><rect x="418.0" y="591" width="44" height="30" rx="7" fill="#eceef3" stroke="#8a92a6" stroke-width="1.3"/><text x="440" y="611" text-anchor="middle" style="font-size:15px"><tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5">2</tspan></text></g>
+<path d="M440,590 L440,560" class="ar" style="stroke:#7a5aa6" marker-end="url(#ahp)"/>
+<text x="590" y="544" text-anchor="middle" style="font-size:20px">⋯</text>
+<path d="M310,538 L417,538" class="ar" style="stroke:#7a5aa6" marker-end="url(#ahp)"/>
+<path d="M460,538 L565,538" class="ar" style="stroke:#7a5aa6" marker-end="url(#ahp)"/>
+<path d="M615,538 L764,550" class="ar" style="stroke:#7a5aa6" marker-end="url(#ahp)"/>
+<g><rect x="772.0" y="591" width="56" height="30" rx="7" fill="#eceef3" stroke="#8a92a6" stroke-width="1.3"/><text x="800" y="611" text-anchor="middle" style="font-size:15px"><tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5">j−1</tspan></text></g>
+<path d="M800,590 L800,572" class="ar" style="stroke:#7a5aa6" marker-end="url(#ahp)"/>
+<text x="520" y="610" text-anchor="middle" class="small sans" style="font-size:11px">one token per step</text>
+<rect x="770" y="535" width="60" height="34" rx="9" fill="#7a5aa6"/><text x="800" y="558" text-anchor="middle" style="fill:#fff;font-size:17px"><tspan class="i">h</tspan><tspan baseline-shift="sub" font-size="10.5">j</tspan></text>
+<path d="M834,552 L878,552" class="ar"  marker-end="url(#ah)"/>
+<rect x="20" y="672" width="1180" height="172" rx="12" fill="#f5f6f9" stroke="#dfe2ea"/>
+<circle cx="46" cy="708" r="12" fill="#7a5aa6"/><text x="46" y="713" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">4</text>
+<text x="68" y="713" class="sans" style="font-size:16px;font-weight:700">Transformer</text>
+<rect x="36" y="756" width="101" height="26" rx="13" fill="#fff" stroke="#c4c9d6"/><text x="87" y="774" text-anchor="middle" class="sans small" style="font-size:12px;font-weight:600">2017–present</text>
+<circle cx="242" cy="818" r="8" fill="#1f8a4c"/><text x="242" y="822.5" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">+</text>
+<text x="257" y="822.5" class="sans" style="font-size:12.5px">Full context via attention</text>
+<circle cx="455.1" cy="818" r="8" fill="#1f8a4c"/><text x="455.1" y="822.5" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">+</text>
+<text x="470.1" y="822.5" class="sans" style="font-size:12.5px">Parallel training</text>
+<circle cx="611.05" cy="818" r="8" fill="#1f8a4c"/><text x="611.05" y="822.5" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">+</text>
+<text x="626.05" y="822.5" class="sans" style="font-size:12.5px">Scales to billions of parameters</text>
+<g><rect x="265.0" y="759" width="50" height="30" rx="7" fill="#eceef3" stroke="#8a92a6" stroke-width="1.3"/><text x="290" y="779" text-anchor="middle" style="font-size:15px"><tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5">1</tspan></text></g>
+<g><rect x="345.0" y="759" width="50" height="30" rx="7" fill="#eceef3" stroke="#8a92a6" stroke-width="1.3"/><text x="370" y="779" text-anchor="middle" style="font-size:15px"><tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5">2</tspan></text></g>
+<g><rect x="425.0" y="759" width="50" height="30" rx="7" fill="#eceef3" stroke="#8a92a6" stroke-width="1.3"/><text x="450" y="779" text-anchor="middle" style="font-size:15px"><tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5">3</tspan></text></g>
+<g><rect x="650.0" y="759" width="50" height="30" rx="7" fill="#eceef3" stroke="#8a92a6" stroke-width="1.3"/><text x="675" y="779" text-anchor="middle" style="font-size:15px"><tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5">j−1</tspan></text></g>
+<text x="562" y="780" text-anchor="middle" style="font-size:20px">⋯</text>
+<path d="M290,757 C290,711 650,721 767,721" fill="none" stroke="#7a5aa6" stroke-opacity="0.8" stroke-width="3.4" stroke-linecap="round" marker-end="url(#ahp)"/>
+<path d="M370,757 C370,719 650,729 767,729" fill="none" stroke="#7a5aa6" stroke-opacity="0.35" stroke-width="1.2" stroke-linecap="round" marker-end="url(#ahp)"/>
+<path d="M450,757 C450,729 650,739 767,739" fill="none" stroke="#7a5aa6" stroke-opacity="0.55" stroke-width="2.2" stroke-linecap="round" marker-end="url(#ahp)"/>
+<path d="M675,757 C675,737 650,747 767,747" fill="none" stroke="#7a5aa6" stroke-opacity="0.95" stroke-width="5.0" stroke-linecap="round" marker-end="url(#ahp)"/>
+<text x="800" y="774" text-anchor="middle" class="small sans" style="font-size:11px;fill:#7a5aa6;font-weight:600">attention weights</text>
+<text x="800" y="788" text-anchor="middle" class="small sans" style="font-size:11px">thicker line = more attention</text>
+<rect x="770" y="717" width="60" height="34" rx="9" fill="#7a5aa6"/><text x="800" y="740" text-anchor="middle" style="fill:#fff;font-size:17px"><tspan class="i">h</tspan><tspan baseline-shift="sub" font-size="10.5">j</tspan></text>
+<path d="M834,734 L878,734" class="ar"  marker-end="url(#ah)"/>
+<rect x="882" y="506" width="308" height="322" rx="12" fill="#e6f4ec" stroke="#1f8a4c" stroke-width="1.5"/>
+<text x="1036" y="530" text-anchor="middle" class="sans" style="font-size:12px;font-weight:600;fill:#1f8a4c">linear + softmax</text>
+<text x="1036" y="547" text-anchor="middle" class="small sans" style="font-size:11px">one shared head for the RNN and the Transformer</text>
+<rect x="902" y="709.0" width="12" height="22" rx="1.5" fill="#a9d3bc"/>
+<rect x="919" y="691.0" width="12" height="40" rx="1.5" fill="#a9d3bc"/>
+<rect x="936" y="639.0" width="12" height="92" rx="1.5" fill="#1f8a4c"/>
+<rect x="953" y="697.0" width="12" height="34" rx="1.5" fill="#a9d3bc"/>
+<rect x="970" y="715.0" width="12" height="16" rx="1.5" fill="#a9d3bc"/>
+<rect x="987" y="703.0" width="12" height="28" rx="1.5" fill="#a9d3bc"/>
+<text x="1125" y="685.0" text-anchor="middle" style="font-size:17px"><tspan class="i">P</tspan>(<tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5"><tspan class="i">j</tspan></tspan> | <tspan class="i">x</tspan><tspan baseline-shift="sub" font-size="10.5">&lt;<tspan class="i">j</tspan></tspan>)</text>
+<text x="610.0" y="880" text-anchor="middle" class="i" style="font-size:18px">From row 2 on, only <tspan>g</tspan><tspan baseline-shift="sub" font-size="12" style="font-style:normal">θ</tspan> changes. The softmax head and cross-entropy loss stay the same.</text>
+</svg>
