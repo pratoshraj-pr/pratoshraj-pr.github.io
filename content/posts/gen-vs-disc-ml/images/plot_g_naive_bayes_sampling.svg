@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 716" width="1100" height="716" role="img" aria-labelledby="t d">
+<title id="t">Naive Bayes sampling: the generative process</title>
+<desc id="d">Ancestral sampling in three steps. Step 1 draws the class from a Bernoulli with P(spam) = 0.4 and gets spam. Step 2 chooses the length m = 8. Step 3 draws eight words independently from the same spam word distribution, giving prize free click free thanks prize free click, whose count vector is (3, 2, 2, 0, 0, 1). This is a bag of words, not a readable email.</desc>
+<style>
+  :root { --bg:#ffffff; --ink:#1f2330; --muted:#5b6275; --line:#8a92a6; --panel:#f5f6f9; --spam:#d6453d; --ham:#2f6fcf; }
+  text { font-family: Georgia, 'Times New Roman', serif; fill: var(--ink); font-size: 14px; }
+  .sans { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .mono { font-family: ui-monospace, Menlo, Consolas, monospace; }
+  .h { font-size: 16px; font-weight: 600; }
+  .small { font-size: 12.5px; fill: var(--muted); }
+  .i { font-style: italic; }
+  .card { fill: var(--panel); stroke: #dfe2ea; stroke-width: 1.2; }
+  .arrow { fill: none; stroke: var(--line); stroke-width: 1.8; }
+  .axis { stroke: var(--line); stroke-width: 1.3; }
+</style>
+<defs>
+  <marker id="head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1 L9,5 L1,9 Z" fill="var(--line)"/></marker>
+</defs>
+<rect width="1100" height="716" rx="10" fill="var(--bg)"/>
+<rect x="30" y="30" width="500" height="140" rx="10" class="card"/>
+<circle cx="56" cy="60" r="12" fill="var(--ink)"/><text x="56" y="65" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">1</text>
+<text x="76" y="65" class="h sans">Draw class</text><text x="170" y="65" class="small i" style="font-size:14px"><tspan>y</tspan> ∼ Bernoulli(π)</text>
+<rect x="52" y="88" width="132.0" height="30" fill="var(--spam)"/>
+<rect x="184.0" y="88" width="198.0" height="30" fill="var(--ham)" fill-opacity=".4"/>
+<rect x="52" y="88" width="132.0" height="30" fill="none" stroke="var(--ink)" stroke-width="2.2"/>
+<text x="118.0" y="108" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:600">P(spam) = 0.4</text>
+<text x="283.0" y="108" text-anchor="middle" class="sans" style="fill:var(--ink);font-size:13px">P(ham) = 0.6</text>
+<text x="52" y="142" class="small sans">a weighted coin flip over the two labels</text>
+<path d="M390,103.0 H432" class="arrow" marker-end="url(#head)"/>
+<rect x="438" y="90" width="68" height="26" rx="14" fill="var(--spam)"/><text x="472" y="109" text-anchor="middle" class="sans" style="fill:#fff;font-weight:700;font-size:14px">spam</text>
+<text x="472" y="142" text-anchor="middle" class="small sans">outcome</text>
+<path d="M534,100 H556" class="arrow" marker-end="url(#head)"/>
+<rect x="560" y="30" width="510" height="140" rx="10" class="card"/>
+<circle cx="586" cy="60" r="12" fill="var(--ink)"/><text x="586" y="65" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">2</text>
+<text x="606" y="65" class="h sans">Choose length</text>
+<text x="592" y="134" style="font-size:40px"><tspan class="i">m</tspan> = 8</text>
+<text x="705" y="112" class="small sans" style="font-size:12px">supplied by us (e.g. from training lengths)</text>
+<text x="705" y="132" class="small sans" style="font-size:12px">the model conditions on length; it does not model it</text>
+<path d="M550,172 V194" class="arrow" marker-end="url(#head)"/>
+<rect x="30" y="198" width="1040" height="336" rx="10" class="card"/>
+<circle cx="56" cy="228" r="12" fill="var(--ink)"/><text x="56" y="233" text-anchor="middle" class="sans" style="fill:#fff;font-size:13px;font-weight:700">3</text>
+<text x="76" y="233" class="h sans">Draw 8 words independently from</text><text x="352" y="233" style="font-size:17px"><tspan class="i">φ</tspan><tspan dy="4" font-size="11">·|spam</tspan><tspan dy="-4"></tspan></text>
+<text x="1050" y="233" text-anchor="end" class="small i" style="font-size:14px"><tspan>x</tspan><tspan dy="4" font-size="10">j</tspan><tspan dy="-4"> ∼ Categorical(φ</tspan><tspan dy="4" font-size="10">·|spam</tspan><tspan dy="-4">),  j = 1 … 8</tspan></text>
+<rect x="380" y="293.2" width="40" height="78.7" rx="2" fill="#d98b1c"/>
+<text x="400.0" y="287.2" text-anchor="middle" class="sans" style="font-size:12px;font-weight:600">0.30</text>
+<text x="400.0" y="389" text-anchor="middle" class="sans" style="font-size:12px">free</text>
+<rect x="440" y="306.4" width="40" height="65.6" rx="2" fill="#5c9a2e"/>
+<text x="460.0" y="300.4" text-anchor="middle" class="sans" style="font-size:12px;font-weight:600">0.25</text>
+<text x="460.0" y="389" text-anchor="middle" class="sans" style="font-size:12px">prize</text>
+<rect x="500" y="306.4" width="40" height="65.6" rx="2" fill="#1b9bb5"/>
+<text x="520.0" y="300.4" text-anchor="middle" class="sans" style="font-size:12px;font-weight:600">0.25</text>
+<text x="520.0" y="389" text-anchor="middle" class="sans" style="font-size:12px">click</text>
+<rect x="560" y="366.8" width="40" height="5.2" rx="2" fill="#5b5fc7"/>
+<text x="580.0" y="360.8" text-anchor="middle" class="sans" style="font-size:12px;font-weight:600">0.02</text>
+<text x="580.0" y="389" text-anchor="middle" class="sans" style="font-size:12px">meeting</text>
+<rect x="620" y="364.1" width="40" height="7.9" rx="2" fill="#8c5a3c"/>
+<text x="640.0" y="358.1" text-anchor="middle" class="sans" style="font-size:12px;font-weight:600">0.03</text>
+<text x="640.0" y="389" text-anchor="middle" class="sans" style="font-size:12px">report</text>
+<rect x="680" y="332.6" width="40" height="39.4" rx="2" fill="#c0398f"/>
+<text x="700.0" y="326.6" text-anchor="middle" class="sans" style="font-size:12px;font-weight:600">0.15</text>
+<text x="700.0" y="389" text-anchor="middle" class="sans" style="font-size:12px">thanks</text>
+<line x1="374" y1="372" x2="726" y2="372" class="axis"/>
+<text x="70" y="300" class="i" style="font-size:15px">The same distribution</text><text x="70" y="320" class="i" style="font-size:15px">for every one of the 8 draws</text>
+<text x="1030" y="300" text-anchor="end" class="i" style="font-size:15px">Each draw is independent:</text><text x="1030" y="320" text-anchor="end" class="i" style="font-size:15px">separate pulls, no memory</text>
+<path d="M550,402 C550,434 151.0,430 151.0,456" class="arrow" marker-end="url(#head)"/>
+<rect x="101.0" y="462" width="100" height="34" rx="8" fill="#5c9a2e" fill-opacity=".16" stroke="#5c9a2e" stroke-width="1.8"/>
+<text x="151.0" y="484" text-anchor="middle" class="sans" style="font-size:15px;font-weight:600">prize</text>
+<text x="151.0" y="516" text-anchor="middle" class="small i">x<tspan dy="4" font-size="10">1</tspan></text>
+<path d="M550,402 C550,434 265.0,430 265.0,456" class="arrow" marker-end="url(#head)"/>
+<rect x="215.0" y="462" width="100" height="34" rx="8" fill="#d98b1c" fill-opacity=".16" stroke="#d98b1c" stroke-width="1.8"/>
+<text x="265.0" y="484" text-anchor="middle" class="sans" style="font-size:15px;font-weight:600">free</text>
+<text x="265.0" y="516" text-anchor="middle" class="small i">x<tspan dy="4" font-size="10">2</tspan></text>
+<path d="M550,402 C550,434 379.0,430 379.0,456" class="arrow" marker-end="url(#head)"/>
+<rect x="329.0" y="462" width="100" height="34" rx="8" fill="#1b9bb5" fill-opacity=".16" stroke="#1b9bb5" stroke-width="1.8"/>
+<text x="379.0" y="484" text-anchor="middle" class="sans" style="font-size:15px;font-weight:600">click</text>
+<text x="379.0" y="516" text-anchor="middle" class="small i">x<tspan dy="4" font-size="10">3</tspan></text>
+<path d="M550,402 C550,434 493.0,430 493.0,456" class="arrow" marker-end="url(#head)"/>
+<rect x="443.0" y="462" width="100" height="34" rx="8" fill="#d98b1c" fill-opacity=".16" stroke="#d98b1c" stroke-width="1.8"/>
+<text x="493.0" y="484" text-anchor="middle" class="sans" style="font-size:15px;font-weight:600">free</text>
+<text x="493.0" y="516" text-anchor="middle" class="small i">x<tspan dy="4" font-size="10">4</tspan></text>
+<path d="M550,402 C550,434 607.0,430 607.0,456" class="arrow" marker-end="url(#head)"/>
+<rect x="557.0" y="462" width="100" height="34" rx="8" fill="#c0398f" fill-opacity=".16" stroke="#c0398f" stroke-width="1.8"/>
+<text x="607.0" y="484" text-anchor="middle" class="sans" style="font-size:15px;font-weight:600">thanks</text>
+<text x="607.0" y="516" text-anchor="middle" class="small i">x<tspan dy="4" font-size="10">5</tspan></text>
+<path d="M550,402 C550,434 721.0,430 721.0,456" class="arrow" marker-end="url(#head)"/>
+<rect x="671.0" y="462" width="100" height="34" rx="8" fill="#5c9a2e" fill-opacity=".16" stroke="#5c9a2e" stroke-width="1.8"/>
+<text x="721.0" y="484" text-anchor="middle" class="sans" style="font-size:15px;font-weight:600">prize</text>
+<text x="721.0" y="516" text-anchor="middle" class="small i">x<tspan dy="4" font-size="10">6</tspan></text>
+<path d="M550,402 C550,434 835.0,430 835.0,456" class="arrow" marker-end="url(#head)"/>
+<rect x="785.0" y="462" width="100" height="34" rx="8" fill="#d98b1c" fill-opacity=".16" stroke="#d98b1c" stroke-width="1.8"/>
+<text x="835.0" y="484" text-anchor="middle" class="sans" style="font-size:15px;font-weight:600">free</text>
+<text x="835.0" y="516" text-anchor="middle" class="small i">x<tspan dy="4" font-size="10">7</tspan></text>
+<path d="M550,402 C550,434 949.0,430 949.0,456" class="arrow" marker-end="url(#head)"/>
+<rect x="899.0" y="462" width="100" height="34" rx="8" fill="#1b9bb5" fill-opacity=".16" stroke="#1b9bb5" stroke-width="1.8"/>
+<text x="949.0" y="484" text-anchor="middle" class="sans" style="font-size:15px;font-weight:600">click</text>
+<text x="949.0" y="516" text-anchor="middle" class="small i">x<tspan dy="4" font-size="10">8</tspan></text>
+<text x="550" y="406" text-anchor="middle" class="small sans" style="font-size:11.5px;display:none"></text>
+<rect x="30" y="556" width="1040" height="144" rx="10" class="card"/>
+<text x="56" y="588" class="h sans">Result</text>
+<text x="56" y="624" class="mono" style="font-size:18px">prize free click free thanks prize free click</text>
+<text x="56" y="646" class="small sans">order is meaningless: any shuffle of these 8 words is equally likely</text>
+<text x="640" y="588" class="small" style="font-size:14px"><tspan class="i">t</tspan>(<tspan class="i">x</tspan>) = (3, 2, 2, 0, 0, 1)  <tspan class="sans" style="font-size:12px">count vector</tspan></text>
+<text x="670" y="608" text-anchor="middle" class="sans" style="font-size:11px">free</text>
+<rect x="640" y="614" width="60" height="30" rx="6" fill="#d98b1c" fill-opacity="0.16" stroke="#d98b1c" stroke-width="1.6" stroke-opacity="1"/>
+<text x="670" y="635" text-anchor="middle" class="sans" style="font-size:16px;font-weight:700;opacity:1">3</text>
+<text x="738" y="608" text-anchor="middle" class="sans" style="font-size:11px">prize</text>
+<rect x="708" y="614" width="60" height="30" rx="6" fill="#5c9a2e" fill-opacity="0.16" stroke="#5c9a2e" stroke-width="1.6" stroke-opacity="1"/>
+<text x="738" y="635" text-anchor="middle" class="sans" style="font-size:16px;font-weight:700;opacity:1">2</text>
+<text x="806" y="608" text-anchor="middle" class="sans" style="font-size:11px">click</text>
+<rect x="776" y="614" width="60" height="30" rx="6" fill="#1b9bb5" fill-opacity="0.16" stroke="#1b9bb5" stroke-width="1.6" stroke-opacity="1"/>
+<text x="806" y="635" text-anchor="middle" class="sans" style="font-size:16px;font-weight:700;opacity:1">2</text>
+<text x="874" y="608" text-anchor="middle" class="sans" style="font-size:11px">meeting</text>
+<rect x="844" y="614" width="60" height="30" rx="6" fill="#5b5fc7" fill-opacity="0.05" stroke="#5b5fc7" stroke-width="1.6" stroke-opacity="0.45"/>
+<text x="874" y="635" text-anchor="middle" class="sans" style="font-size:16px;font-weight:700;opacity:0.45">0</text>
+<text x="942" y="608" text-anchor="middle" class="sans" style="font-size:11px">report</text>
+<rect x="912" y="614" width="60" height="30" rx="6" fill="#8c5a3c" fill-opacity="0.05" stroke="#8c5a3c" stroke-width="1.6" stroke-opacity="0.45"/>
+<text x="942" y="635" text-anchor="middle" class="sans" style="font-size:16px;font-weight:700;opacity:0.45">0</text>
+<text x="1010" y="608" text-anchor="middle" class="sans" style="font-size:11px">thanks</text>
+<rect x="980" y="614" width="60" height="30" rx="6" fill="#c0398f" fill-opacity="0.16" stroke="#c0398f" stroke-width="1.6" stroke-opacity="1"/>
+<text x="1010" y="635" text-anchor="middle" class="sans" style="font-size:16px;font-weight:700;opacity:1">1</text>
+<text x="56" y="682" class="i" style="font-size:15.5px">Not a readable email — the model generates word frequencies, not coherent text.</text>
+<text x="1050" y="682" text-anchor="end" class="small sans">compare with LM sampling later</text>
+</svg>

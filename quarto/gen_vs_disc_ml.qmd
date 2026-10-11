@@ -8,10 +8,8 @@ description: "A rigorous, ground-up treatment of what separates generative from 
 summary: "The cleanest way to separate the two is one question: which distribution is the model learning? This post builds the answer from first principles using maximum likelihood, KL divergence, Naive Bayes, and transformer-based language models."
 math: true
 ShowToc: true
-TocOpen: true
+TocOpen: false
 ---
-
-# Fundamentals of Generative vs Discriminative Modeling
 
 > **TL;DR**
 >

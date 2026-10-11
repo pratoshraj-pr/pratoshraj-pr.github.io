@@ -19,4 +19,4 @@ I'm **Pratosh Raj**. You can find me on [GitHub](https://github.com/pratoshraj-p
 
 ---
 
-*Site built with [Hugo](https://gohugo.io) + [PaperMod](https://github.com/adityatelange/hugo-PaperMod), rendered with [Quarto](https://quarto.org), deployed on [GitHub Pages](https://pages.github.com).*
+*Site built with [Hugo](https://gohugo.io) + [PaperMod](https://github.com/adityatelange/hugo-PaperMod), deployed on [GitHub Pages](https://pages.github.com).*

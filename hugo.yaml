@@ -22,13 +22,16 @@ params:
   env: production
   title: "PR Logs"
   description: "Technical notes on machine learning, statistics, and the occasional deep dive."
-  author: "pratoshraj-pr"
+  author: "Pratosh Raj"
+  images:
+    - "/images/og-default.png"
   DateFormat: "January 2, 2006"
   defaultTheme: auto          # auto = respect OS preference; user can toggle
   disableThemeToggle: false
 
   ShowReadingTime: true
-  ShowShareButtons: false
+  ShowShareButtons: true
+  ShareButtons: [x, linkedin, reddit, facebook, whatsapp, telegram]
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
@@ -38,7 +41,8 @@ params:
   TocOpen: false
   disableSpecial1stPost: false
   disableScrollToTop: false
-  comments: false
+  comments: true
+  math: true
   hidemeta: false
   hideSummary: false
   showtoc: true
@@ -66,7 +70,7 @@ params:
     hiddenInSingle: true
 
   editPost:
-    URL: "https://github.com/pratoshraj-pr/pratoshraj-pr.github.io/blob/main/quarto"
+    URL: "https://github.com/pratoshraj-pr/pratoshraj-pr.github.io/blob/main/content"
     Text: "Suggest Changes"
     appendFilePath: true
 
@@ -109,6 +113,16 @@ markup:
   goldmark:
     renderer:
       unsafe: true     # allow raw HTML (needed for <details> tags in the post)
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ['\[', '\]']
+            - ['$$', '$$']
+          inline:
+            - ['\(', '\)']
+            - ['$', '$']
   highlight:
     noClasses: false
     style: monokai

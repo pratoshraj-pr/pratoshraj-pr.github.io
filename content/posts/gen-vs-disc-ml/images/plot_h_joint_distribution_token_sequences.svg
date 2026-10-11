@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 650" width="960" height="650" role="img" aria-labelledby="t d">
+<title id="t">A language model assigns probability to whole sequences</title>
+<desc id="d">A table of eight three-token sequences with the probability P(x) of each whole sequence, shaded from green for high to white for low. The coherent sequences The cat sat (0.00056), She ran fast (0.0003) and The cat ran (0.0002) are highlighted and have the highest probability. Grammatical but rare The mat sat is about 4 times 10 to the minus 6, incoherent sequences such as Sat the cat are around 10 to the minus 6 or lower, and the random string Fast sat mat is 10 to the minus 8.</desc>
+<style>
+  :root { --bg:#ffffff; --ink:#1f2330; --muted:#5b6275; --line:#8a92a6; }
+  text { font-family: Georgia, 'Times New Roman', serif; fill: var(--ink); font-size: 15px; }
+  .sans { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .small { font-size: 12.5px; fill: var(--muted); }
+  .i { font-style: italic; }
+  .tok { font-size: 17px; }
+  .val { font-size: 15px; font-weight: 600; font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .cat { font-size: 12.5px; font-weight: 600; }
+</style>
+<rect width="960" height="650" rx="10" fill="var(--bg)"/>
+<text x="480.0" y="40" text-anchor="middle" style="font-size:21px">A language model scores <tspan class="i">whole sequences</tspan></text>
+<text x="480.0" y="64" text-anchor="middle" class="small sans" style="font-size:13.5px">Toy vocabulary {The, cat, sat, on, mat, ran, she, fast} · illustrative numbers: the ranking matters, not the exact values</text>
+<text x="40" y="130" class="small sans" style="font-weight:600">TYPE OF TEXT</text>
+<text x="232" y="130" class="small sans" style="font-weight:600">3-TOKEN SEQUENCE  <tspan class="i" style="font-family:Georgia,serif;font-weight:400">x</tspan> = (<tspan class="i" style="font-family:Georgia,serif;font-weight:400">x</tspan><tspan style="font-family:Georgia,serif;font-weight:400;font-size:13px">₁</tspan>, <tspan class="i" style="font-family:Georgia,serif;font-weight:400">x</tspan><tspan style="font-family:Georgia,serif;font-weight:400;font-size:13px">₂</tspan>, <tspan class="i" style="font-family:Georgia,serif;font-weight:400">x</tspan><tspan style="font-family:Georgia,serif;font-weight:400;font-size:13px">₃</tspan>)</text>
+<text x="763.0" y="120" text-anchor="middle" style="font-size:16px"><tspan class="i">P</tspan>(<tspan class="i">x</tspan>) = <tspan class="i">P</tspan>(<tspan class="i">x</tspan>₁, <tspan class="i">x</tspan>₂, <tspan class="i">x</tspan>₃)</text>
+<text x="763.0" y="139" text-anchor="middle" class="small sans" style="font-size:12px">joint probability of the whole sequence, not conditional</text>
+<line x1="30" y1="156" x2="930" y2="156" stroke="var(--line)" stroke-width="1.2"/>
+<rect x="24" y="162" width="912" height="138" rx="10" fill="#e6f4ec" stroke="#1f8a4c" stroke-width="1.8"/>
+<text x="40" y="192.5" class="cat sans" style="fill:#1f8a4c">Coherent</text>
+<rect x="232" y="173.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="281" y="194.0" text-anchor="middle" class="tok">The</text>
+<rect x="340" y="173.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="389" y="194.0" text-anchor="middle" class="tok">cat</text>
+<rect x="448" y="173.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="497" y="194.0" text-anchor="middle" class="tok">sat</text>
+<rect x="618" y="172.0" width="290" height="32" rx="6" fill="#299857" stroke="#b9d9c6" stroke-width="1"/>
+<text x="763.0" y="193.5" text-anchor="middle" class="val" style="fill:#ffffff">5.6 × 10<tspan dy="-6" font-size="11">−4</tspan><tspan dy="6" style="font-weight:400;font-size:12.5px">  = 0.00056</tspan></text>
+<rect x="232" y="219.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="281" y="240.0" text-anchor="middle" class="tok">She</text>
+<rect x="340" y="219.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="389" y="240.0" text-anchor="middle" class="tok">ran</text>
+<rect x="448" y="219.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="497" y="240.0" text-anchor="middle" class="tok">fast</text>
+<rect x="618" y="218.0" width="290" height="32" rx="6" fill="#339c5e" stroke="#b9d9c6" stroke-width="1"/>
+<text x="763.0" y="239.5" text-anchor="middle" class="val" style="fill:#ffffff">3 × 10<tspan dy="-6" font-size="11">−4</tspan></text>
+<rect x="232" y="265.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="281" y="286.0" text-anchor="middle" class="tok">The</text>
+<rect x="340" y="265.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="389" y="286.0" text-anchor="middle" class="tok">cat</text>
+<rect x="448" y="265.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="497" y="286.0" text-anchor="middle" class="tok">ran</text>
+<rect x="618" y="264.0" width="290" height="32" rx="6" fill="#399f63" stroke="#b9d9c6" stroke-width="1"/>
+<text x="763.0" y="285.5" text-anchor="middle" class="val" style="fill:#ffffff">2 × 10<tspan dy="-6" font-size="11">−4</tspan></text>
+<text x="40" y="330.5" class="cat sans" style="fill:#a8731a">Grammatical, rare</text>
+<line x1="30" y1="303" x2="930" y2="303" stroke="#e1e4ec" stroke-width="1"/>
+<rect x="232" y="311.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="281" y="332.0" text-anchor="middle" class="tok">The</text>
+<rect x="340" y="311.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="389" y="332.0" text-anchor="middle" class="tok">mat</text>
+<rect x="448" y="311.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="497" y="332.0" text-anchor="middle" class="tok">sat</text>
+<rect x="618" y="310.0" width="290" height="32" rx="6" fill="#78be95" stroke="#b9d9c6" stroke-width="1"/>
+<text x="763.0" y="331.5" text-anchor="middle" class="val" style="fill:#1f2330">4 × 10<tspan dy="-6" font-size="11">−6</tspan></text>
+<text x="40" y="376.5" class="cat sans" style="fill:#b5472f">Incoherent</text>
+<line x1="30" y1="349" x2="930" y2="349" stroke="#e1e4ec" stroke-width="1"/>
+<rect x="232" y="357.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="281" y="378.0" text-anchor="middle" class="tok">Sat</text>
+<rect x="340" y="357.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="389" y="378.0" text-anchor="middle" class="tok">the</text>
+<rect x="448" y="357.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="497" y="378.0" text-anchor="middle" class="tok">cat</text>
+<rect x="618" y="356.0" width="290" height="32" rx="6" fill="#8fc9a7" stroke="#b9d9c6" stroke-width="1"/>
+<text x="763.0" y="377.5" text-anchor="middle" class="val" style="fill:#1f2330">1 × 10<tspan dy="-6" font-size="11">−6</tspan></text>
+<rect x="232" y="403.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="281" y="424.0" text-anchor="middle" class="tok">Fast</text>
+<rect x="340" y="403.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="389" y="424.0" text-anchor="middle" class="tok">she</text>
+<rect x="448" y="403.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="497" y="424.0" text-anchor="middle" class="tok">ran</text>
+<rect x="618" y="402.0" width="290" height="32" rx="6" fill="#acd7bd" stroke="#b9d9c6" stroke-width="1"/>
+<text x="763.0" y="423.5" text-anchor="middle" class="val" style="fill:#1f2330">2 × 10<tspan dy="-6" font-size="11">−7</tspan></text>
+<rect x="232" y="449.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="281" y="470.0" text-anchor="middle" class="tok">Mat</text>
+<rect x="340" y="449.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="389" y="470.0" text-anchor="middle" class="tok">fast</text>
+<rect x="448" y="449.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="497" y="470.0" text-anchor="middle" class="tok">the</text>
+<rect x="618" y="448.0" width="290" height="32" rx="6" fill="#c6e3d2" stroke="#b9d9c6" stroke-width="1"/>
+<text x="763.0" y="469.5" text-anchor="middle" class="val" style="fill:#1f2330">5 × 10<tspan dy="-6" font-size="11">−8</tspan></text>
+<text x="40" y="514.5" class="cat sans" style="fill:#7b8294">Random</text>
+<line x1="30" y1="487" x2="930" y2="487" stroke="#e1e4ec" stroke-width="1"/>
+<rect x="232" y="495.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="281" y="516.0" text-anchor="middle" class="tok">Fast</text>
+<rect x="340" y="495.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="389" y="516.0" text-anchor="middle" class="tok">sat</text>
+<rect x="448" y="495.0" width="98" height="30" rx="7" fill="#ffffff" stroke="#c4c9d6" stroke-width="1.2"/>
+<text x="497" y="516.0" text-anchor="middle" class="tok">mat</text>
+<rect x="618" y="494.0" width="290" height="32" rx="6" fill="#e7f3ec" stroke="#b9d9c6" stroke-width="1"/>
+<text x="763.0" y="515.5" text-anchor="middle" class="val" style="fill:#1f2330">1 × 10<tspan dy="-6" font-size="11">−8</tspan></text>
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0.0" stop-color="#269654"/><stop offset="0.1" stop-color="#399f63"/><stop offset="0.2" stop-color="#4ba872"/><stop offset="0.3" stop-color="#5fb181"/><stop offset="0.4" stop-color="#72bb90"/><stop offset="0.5" stop-color="#87c5a0"/><stop offset="0.6" stop-color="#9bcfb1"/><stop offset="0.7" stop-color="#b1d9c2"/><stop offset="0.8" stop-color="#c8e4d3"/><stop offset="0.9" stop-color="#e0f0e7"/><stop offset="1.0" stop-color="#ffffff"/></linearGradient></defs>
+<text x="618" y="558" class="small sans" style="font-size:11.5px">high</text>
+<rect x="652" y="548" width="214" height="10" rx="5" fill="url(#g)" stroke="#b9d9c6" stroke-width="1"/>
+<text x="908" y="558" text-anchor="end" class="small sans" style="font-size:11.5px">low</text>
+<text x="763.0" y="576" text-anchor="middle" class="small sans" style="font-size:11px">shading on a log scale (spans almost five orders of magnitude)</text>
+<text x="480.0" y="622" text-anchor="middle" class="i" style="font-size:17px">Coherent sequences get high probability. The model knows what plausible text looks like.</text>
+</svg>
