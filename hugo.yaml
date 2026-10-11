@@ -23,6 +23,7 @@ params:
   title: "PR Logs"
   description: "Technical notes on machine learning, statistics, and the occasional deep dive."
   author: "Pratosh Raj"
+  googleAnalyticsID: "G-QF31SB7ZP5"   # GA4 Measurement ID, e.g. G-XXXXXXXXXX
   images:
     - "/images/og-default.png"
   DateFormat: "January 2, 2006"
@@ -54,15 +55,25 @@ params:
   homeInfoParams:
     Title: "PR Logs"
     Content: |
-      Technical deep-dives on machine learning, probability, and statistics.
-      Written to be understood, not just cited.
+      Hi, and welcome to my blog! I'm Pratosh Raj, a data scientist now exploring
+      post-training for LLMs, alignment, and safety. This blog documents what I learn
+      along the way, and I'm sharing it so others can benefit too.
 
   socialIcons:
     - name: github
       url: "https://github.com/pratoshraj-pr"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/pratosh-raj-56052b161/"
+    - name: rss
+      url: "/index.xml"
 
   assets:
     disableHLJS: false
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+    apple_touch_icon: "/apple-touch-icon.png"
+    safari_pinned_tab: "/favicon.svg"
 
   cover:
     hidden: true
@@ -98,10 +109,6 @@ menu:
       name: Search
       url: /search/
       weight: 30
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 40
 
 outputs:
   home:
@@ -113,6 +120,9 @@ markup:
   goldmark:
     renderer:
       unsafe: true     # allow raw HTML (needed for <details> tags in the post)
+    parser:
+      attribute:
+        block: true    # allows {.caption} on the line after a figure caption
     extensions:
       passthrough:
         enable: true

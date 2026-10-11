@@ -129,6 +129,7 @@ Note the difference: $D$ is a finite *sample*, and $P^\ast$ is the unknown *sour
 ![A large faded cloud of spam and ham emails labeled P*(x, y), the unknown true distribution, with arrows labeled "i.i.d. draw" pulling a few emails into a small box labeled D, the observed training set.](images/plot_a_true_distribution_iid_sampling.svg)
 
 *Figure A: The training set $D$ is a small, finite window into the unknown distribution $P^\ast$; each example is an independent draw.*
+{.caption}
 
 For classification, the thing we want is the conditional distribution $P^\ast(\text{y}\mid\text{x})$: given an input, how likely is each label? We cannot write it down, so we choose a family of candidate distributions $P(\text{y}\mid\text{x};\theta)$ indexed by parameters $\theta$, and look for the best $\theta$.
 
@@ -160,6 +161,7 @@ So the joint contains the conditional, and more. That raises a natural question:
 ![Two panels with the same spam and ham points. Left, discriminative: a single boundary line with a narrow band where P(spam | x) goes from 0 to 1, and plain space elsewhere. Right, generative: elliptical density contours for each class, with a dashed boundary where the two weighted densities are equal.](images/plot_b_discriminative_vs_generative.svg)
 
 *Figure B: A discriminative model learns only $P(y\mid x)$, which is pinned down by where the classes separate. A generative model learns how each class is spread out, and the boundary is derived from those densities. (Illustrated with two continuous features for visibility.)*
+{.caption}
 
 Both approaches learn a distribution, and which *distribution* it models determines what the model can do.
 
@@ -236,6 +238,7 @@ Note that the output is a *probability*, not a label. $f_\theta(x)$ is the proba
 ![A left-to-right pipeline: the email "free prize free", its bag-of-words count vector (2, 1, 0, 0, 0, 0), a weighted sum giving z = 3.2, a sigmoid curve mapping 3.2 to 0.96, and an output bar with P(spam) = 0.96 and P(ham) = 0.04.](images/plot_d_logistic_regression_pipeline.svg)
 
 *Figure D: Logistic regression pipeline: email → bag-of-words → linear score → sigmoid → a distribution over labels only.*
+{.caption}
 
 **The distribution.** For each training email, the label follows a Bernoulli distribution ([Appendix C](#appendix-c-bernoulli-categorical-and-multinomial-distributions)) whose parameter is $p_i=f_\theta(x_i)$:[^bernoulli]
 
@@ -310,6 +313,7 @@ The model does not care *where* a word appears, only *which* words appear and ho
 ![Three panels for the class-conditional distribution. Panel 1: a vast grid of |V|^m possible emails, 2(|V|^m − 1) + 1 parameters. Panel 2, after conditional independence: m separate bar charts, one per position, 2m(|V| − 1) + 1 parameters. Panel 3, after position independence: one shared bar chart over the six toy words, 2(|V| − 1) + 1 parameters.](images/plot_e_naive_bayes_assumptions_shrink.svg)
 
 *Figure E: Each Naive Bayes assumption shrinks the parameters of $P(\text{x}\mid y)$ dramatically.*
+{.caption}
 
 **The parameters.** Under the two assumptions, the whole model has just these parameters:
 
@@ -417,6 +421,7 @@ Now take "meeting report thanks". The spam score is $0.4\times 0.02\times 0.03\t
 ![Bar chart on a log scale comparing spam and ham scores P(x | y) P(y). For "free prize", spam scores 0.030 and ham 0.00012, giving P(spam | x) ≈ 0.996. For "meeting report thanks", spam scores 0.000036 and ham 0.01575, giving P(spam | x) ≈ 0.0023.](images/plot_f_naive_bayes_classification_scores.svg)
 
 *Figure F: Naive Bayes scores $P(x\mid y)P(y)$ for both classes; the larger score wins, and Bayes' rule turns them into $P(y\mid x)$.*
+{.caption}
 
 **Sampling: what a generated email looks like.** Because we learned $P(x\mid y)$ and $P(y)$, we can also run the model forwards. First draw the label, then draw the words given the label (this is called *ancestral sampling*):
 
@@ -441,6 +446,7 @@ This is how a generative model produces new *inputs*, which answers question 3. 
 ![Three steps of ancestral sampling: draw the class from P(spam) = 0.4, P(ham) = 0.6 and get spam; choose length m = 8; draw eight words independently from the spam word distribution, giving "prize free click free thanks prize free click" and the count vector (3, 2, 2, 0, 0, 1).](images/plot_g_naive_bayes_sampling.svg)
 
 *Figure G: Ancestral sampling from Naive Bayes: draw a class, choose a length, then draw each word independently from the class's word distribution.*
+{.caption}
 
 ---
 
@@ -509,6 +515,7 @@ The function $g_\theta$ maps the raw input to a learned vector $h$, and a final 
 ![Flow diagram: a crossed-out lookup table with |V|^m entries per class branches into Escape A, simplifying assumptions that collapse it to |V| entries per class (Naive Bayes, n-grams), and Escape B, a shared-parameter function f_θ shown as three stages: linear logistic regression, a neural network with a hidden representation h, and a Transformer with attention.](images/plot_c_parameterisation_progression.svg)
 
 *Figure C: All models face the same exponential-table bottleneck and escape either by assuming structure (A) or by parameterizing with a shared function $f_\theta$ (B). Transformers are covered in the next section.*
+{.caption}
 
 **What stays the same.** The **distribution family** does not change when we change the parameterization. A Bernoulli is still a Bernoulli; a categorical is still a categorical. What changes is **how we produce the distribution's parameters from the input**. A lookup table, a linear function, and a Transformer all output the same kind of object, probabilities over outcomes, through very different means. The MLE objective does not change either: we still maximize the log-likelihood, however the probabilities are computed.
 
@@ -533,6 +540,7 @@ As before, there is an unknown true distribution $P^\ast(\text{x})$, now over *t
 ![A table of 3-token sequences with their joint probability P(x), shaded on a log scale: coherent sequences such as "The cat sat" (5.6 × 10⁻⁴) at the top, grammatical but rare ones in the middle, and incoherent or random ones such as "Fast sat mat" (1 × 10⁻⁸) at the bottom.](images/plot_h_joint_distribution_token_sequences.svg)
 
 *Figure H: A language model assigns high probability to coherent sequences and near-zero probability to incoherent ones (illustrative values).*
+{.caption}
 
 Texts have different lengths, so the model also has to say *when a text ends*. We handle this with a special **end-of-sequence token** (EOS) appended to every text. The model treats "stop here" as just another token it can predict. This fixes a gap we noticed in the Naive Bayes sampler, where the length $m$ was something we had to supply ourselves.
 
@@ -576,6 +584,7 @@ For example, $P(\text{The cat sat})=P(\text{The})\,P(\text{cat}\mid\text{The})\,
 ![Three steps left to right, each a bar chart over the same ten words: P(x1) with "The" highlighted at 0.01, P(x2 | The) with "cat" at 0.08, and P(x3 | The cat) with "sat" at 0.70. Each chosen token is appended to the context, and the product 0.01 × 0.08 × 0.70 = 0.00056 gives P(The cat sat).](images/plot_i_autoregressive_factorization.svg)
 
 *Figure I: The chain rule turns the joint probability of a text into a product of next-token predictions, each conditioned on a growing context.*
+{.caption}
 
 Three things are worth noticing.
 
@@ -681,6 +690,7 @@ Everything so far (the factorization, the softmax head, and the cross-entropy lo
 ![Four rows showing how a prefix becomes next-token probabilities. Row 1, n-gram: the last n−1 tokens index a lookup table filled by counting. Row 2, neural n-gram (Bengio et al., 2003): window tokens become embeddings fed to a neural network that outputs h_j. Row 3, RNN/LSTM: tokens are read one at a time, each updating a hidden state. Row 4, Transformer: every earlier token connects to h_j through attention. Rows 2–4 share the same softmax head.](images/plot_j_parameterisation_evolution_g_theta.svg)
 
 *Figure J: Four ways to get $P(x_j\mid x_{\lt j})$. Row 1 counts; from row 2 on, only $g_\theta$ changes, while the softmax head and cross-entropy loss stay the same.*
+{.caption}
 
 **1. n-gram models (counting).** The simplest approach assumes that only the last $n-1$ tokens matter, $P(x_j\mid x_{\lt j})\approx P(x_j\mid x_{j-n+1},\dots,x_{j-1})$, and stores one distribution per context, estimated by counting exactly as in equation (14). (Here $n$ is the context length, unrelated to the dataset size.) The idea goes back to Shannon's n-gram approximations of English ([Shannon, 1948](https://doi.org/10.1002/j.1538-7305.1948.tb01338.x)), and smoothing methods such as Kneser–Ney ([Kneser & Ney, 1995](https://doi.org/10.1109/ICASSP.1995.479394); [Chen & Goodman, 1999](https://doi.org/10.1006/csla.1999.0128)) made it work well in practice. Naive Bayes' word model is the extreme case $n=1$ (a "unigram" model, one per class). Unlike the chain rule, this truncation *is* an approximation, and it has real limits. The window is short, the number of possible contexts explodes as $n$ grows (so most are never seen in training), and the model has no notion that "cat" and "dog" are similar words, so what it learns about one tells it nothing about the other.
 

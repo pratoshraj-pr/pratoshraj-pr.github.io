@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512">
+  <title>Cute avatar with beard and gold polygonal specs</title>
+  <defs>
+    <clipPath id="round"><circle cx="50" cy="50" r="48"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <!-- Background -->
+    <rect width="100" height="100" fill="#F6E7B9"/>
+
+    <!-- Blazer -->
+    <path d="M6 100 Q10 82 36 79 L64 79 Q90 82 94 100 Z" fill="#1E1E24"/>
+
+    <!-- Neck -->
+    <path d="M40 64 L40 80 Q50 88 60 80 L60 64 Z" fill="#B97A4E"/>
+
+    <!-- Lavender collar -->
+    <path d="M36 78 L42 73 L50 88 L46 97 L31 91 Z" fill="#A99BE0"/>
+    <path d="M64 78 L58 73 L50 88 L54 97 L69 91 Z" fill="#A99BE0"/>
+
+    <!-- Ears -->
+    <circle cx="17" cy="55" r="4.8" fill="#BE7F53"/>
+    <circle cx="83" cy="55" r="4.8" fill="#BE7F53"/>
+    <circle cx="17.5" cy="55" r="2" fill="#C98B5E"/>
+    <circle cx="82.5" cy="55" r="2" fill="#C98B5E"/>
+
+    <!-- Head -->
+    <ellipse cx="50" cy="52" rx="33" ry="30" fill="#C98B5E"/>
+
+    <!-- Thick hair -->
+    <path d="M15 52 Q7 13 50 11 Q93 13 85 52 Q84 38 74 34 Q62 28 50 30 Q38 28 26 34 Q16 38 15 52 Z" fill="#17110E"/>
+
+    <!-- Full beard -->
+    <path d="M17 56 Q18 84 50 86 Q82 84 83 56 Q80 66 72 68 Q66 64 58 63 Q50 61 42 63 Q34 64 28 68 Q20 66 17 56 Z" fill="#1F1612"/>
+
+    <!-- Gentle smile -->
+    <path d="M43 69 Q46.5 67.4 50 68.4 Q53.5 67.4 57 69 Q50 75.5 43 69 Z" fill="#E39A91"/>
+
+    <!-- Blush -->
+    <ellipse cx="30" cy="60" rx="4.5" ry="2.8" fill="#E8837F" opacity="0.4"/>
+    <ellipse cx="70" cy="60" rx="4.5" ry="2.8" fill="#E8837F" opacity="0.4"/>
+
+    <!-- Nose -->
+    <ellipse cx="50" cy="58.5" rx="3" ry="2" fill="#B97A4E"/>
+
+    <!-- Eyebrows -->
+    <path d="M28 36 Q36 32.5 44 36" fill="none" stroke="#17110E" stroke-width="3" stroke-linecap="round"/>
+    <path d="M56 36 Q64 32.5 72 36" fill="none" stroke="#17110E" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Big eyes (blink) -->
+    <ellipse cx="36" cy="49" rx="5.4" ry="5.8" fill="#2A1810">
+      <animate attributeName="ry" values="5.8;5.8;0.5;5.8" keyTimes="0;0.92;0.96;1" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="64" cy="49" rx="5.4" ry="5.8" fill="#2A1810">
+      <animate attributeName="ry" values="5.8;5.8;0.5;5.8" keyTimes="0;0.92;0.96;1" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    <circle cx="38.2" cy="46.6" r="2.1" fill="#FFFFFF"/>
+    <circle cx="34" cy="51.4" r="1" fill="#FFFFFF"/>
+    <circle cx="66.2" cy="46.6" r="2.1" fill="#FFFFFF"/>
+    <circle cx="62" cy="51.4" r="1" fill="#FFFFFF"/>
+
+    <!-- Polygonal gold specs -->
+    <polygon points="26,43 31,38.5 41,38.5 46,43 46,54 41,59.5 31,59.5 26,54"
+             fill="#FFFFFF" fill-opacity="0.15" stroke="#B8A27A" stroke-width="2.2" stroke-linejoin="round"/>
+    <polygon points="54,43 59,38.5 69,38.5 74,43 74,54 69,59.5 59,59.5 54,54"
+             fill="#FFFFFF" fill-opacity="0.15" stroke="#B8A27A" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M46 44 Q50 41.5 54 44" fill="none" stroke="#B8A27A" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M26 44 L17 43" stroke="#B8A27A" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M74 44 L83 43" stroke="#B8A27A" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- Lens glare -->
+    <path d="M30 45 L33 41.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+    <path d="M58 45 L61 41.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+  </g>
+
+  <!-- Outline -->
+  <circle cx="50" cy="50" r="48" fill="none" stroke="#E5CF95" stroke-width="2"/>
+</svg>

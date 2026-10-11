@@ -1,0 +1,17 @@
+{{- with site.Params.googleAnalyticsID }}
+<script>
+  // Respect Do Not Track: load Google Analytics only when DNT is not enabled.
+  (function () {
+    var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+    if (dnt === "1" || dnt === "yes" || dnt === 1) return;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id={{ . }}";
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag("js", new Date());
+    gtag("config", "{{ . }}");
+  })();
+</script>
+{{- end }}
