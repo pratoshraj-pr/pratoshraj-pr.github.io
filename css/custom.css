@@ -41,29 +41,21 @@ h1, h2, h3, h4 {
   font-style: italic;
 }
 
-/* ─── Figure captions  ──────────────────────────────────────────────────────── *
- * Captions are the *Figure X: …* italic line directly after an image.
- * In the markdown they're  `*Figure A: …*`  which Hugo renders as  <em>.
- * We target <p> elements that contain only an <em> and follow an image.       */
-.post-content p > img + br ~ em,
-.post-content p > img ~ em:only-child {
-  /* fallback: if Hugo wraps image and caption in separate <p>'s, see below */
-}
-
-/* Hugo usually renders the caption as its own <p><em>Figure …</em></p>.
-   Target those via a general selector and refine with the "Figure" prefix
-   handled by the font styling itself.                                         */
-.post-content img + em,
-.post-content p:has(> em:only-child) em {
-  display: block;
+/* ─── Figure captions ───────────────────────────────────────────────────────── *
+ * Mark a caption in markdown by putting {.caption} on the line after it:
+ *   *Figure A: …*
+ *   {.caption}                                                                */
+.post-content p.caption {
   font-family: 'Inter', sans-serif;
-  font-style: italic;
-  font-weight: 400;
   font-size: 0.88rem;
   line-height: 1.55;
   color: var(--secondary);
-  margin-top: 0.35em;
   text-align: center;
+  margin-top: -0.6em;
+}
+
+.post-content p.caption em {
+  font-weight: 400;
 }
 
 /* ─── Inline code & code blocks ─────────────────────────────────────────────── */
