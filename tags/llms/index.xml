@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>LLMs on PR Logs</title>
+    <title>LLMs on PR Blogs</title>
     <link>https://pratoshraj-pr.github.io/tags/llms/</link>
-    <description>Recent content in LLMs on PR Logs</description>
-    <image>
-      <title>PR Logs</title>
-      <url>https://pratoshraj-pr.github.io/images/og-default.png</url>
-      <link>https://pratoshraj-pr.github.io/images/og-default.png</link>
-    </image>
+    <description>Recent content in LLMs on PR Blogs</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
