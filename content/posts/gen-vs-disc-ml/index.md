@@ -1,5 +1,5 @@
 ---
-title: "Generative vs Discriminative Models: From Naive Bayes to LLMs"
+title: "Discriminative vs Generative Models: From Logistic Regression to LLMs"
 date: 2026-10-09
 draft: false
 tags:
@@ -12,8 +12,8 @@ tags:
 categories:
   - Machine Learning
 description: >-
-  A probabilistic lens on what each kind of model actually learns: logistic
-  regression, Naive Bayes, and how LLMs fit the picture.
+  A probabilistic lens on what each kind of modelling actually learns: starting from logistic
+  regression, Naive Bayes, to how LLMs fit the picture.
 summary: >-
   Both kinds of model learn a probability distribution. The difference is which
   one. This post builds the answer from first principles using maximum
@@ -23,7 +23,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "images/cover.png"
-  alt: "Generative vs Discriminative Models"
+  alt: "Discriminative vs Generative Models"
   relative: true
 ---
 
@@ -732,16 +732,16 @@ Everything so far (the factorization, the softmax head, and the cross-entropy lo
 
 ### Blog link
 
-Raj, Pratosh. "Generative vs Discriminative Models: From Naive Bayes to LLMs." *PR Logs*, October 9, 2024. [https://pratoshraj-pr.github.io/posts/gen-vs-disc-ml/](https://pratoshraj-pr.github.io/posts/gen-vs-disc-ml/)
+Raj, Pratosh. "Discriminative vs Generative Models: From Logistic Regression to LLMs." *PR Blogs*, October 9, 2026. [https://pratoshraj-pr.github.io/posts/gen-vs-disc-ml/](https://pratoshraj-pr.github.io/posts/gen-vs-disc-ml/)
 
 ### BibTeX
 
 ```bibtex
-@article{raj2024genvsdiscml,
-  title   = {Generative vs Discriminative Models: From Naive Bayes to LLMs},
+@article{raj2026discvsgenml,
+  title   = {Discriminative vs Generative Models: From Logistic Regression to LLMs},
   author  = {Raj, Pratosh},
-  journal = {PR Logs},
-  year    = {2024},
+  journal = {PR Blogs},
+  year    = {2026},
   month   = oct,
   url     = {https://pratoshraj-pr.github.io/posts/gen-vs-disc-ml/}
 }
