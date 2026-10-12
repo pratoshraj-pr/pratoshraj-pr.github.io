@@ -2,10 +2,10 @@
 title: "About"
 layout: "single"
 url: "/about/"
-summary: "About PR Logs"
+summary: "About PR Blogs"
 ---
 
-## About PR Logs
+## About PR Blogs
 
 This blog is a collection of technical notes on machine learning, statistics, and related topics. The goal is to write things I genuinely had to think through — not summaries of other summaries, but the kind of explanation I wished existed when I was learning.
 

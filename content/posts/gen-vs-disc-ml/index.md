@@ -21,6 +21,10 @@ summary: >-
 math: true
 ShowToc: true
 TocOpen: false
+cover:
+  image: "images/cover.png"
+  alt: "Generative vs Discriminative Models"
+  relative: true
 ---
 
 > **TL;DR**

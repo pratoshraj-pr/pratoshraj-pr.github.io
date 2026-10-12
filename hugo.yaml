@@ -1,6 +1,6 @@
 baseURL: "https://pratoshraj-pr.github.io/"
 locale: "en-us"
-title: "PR Logs"
+title: "PR Blogs"
 
 security:
   allowContent:
@@ -20,12 +20,10 @@ minify:
 
 params:
   env: production
-  title: "PR Logs"
+  title: "PR Blogs"
   description: "Technical notes on machine learning, statistics, and the occasional deep dive."
   author: "Pratosh Raj"
   googleAnalyticsID: "G-QF31SB7ZP5"   # GA4 Measurement ID, e.g. G-XXXXXXXXXX
-  images:
-    - "/images/og-default.png"
   DateFormat: "January 2, 2006"
   defaultTheme: auto          # auto = respect OS preference; user can toggle
   disableThemeToggle: false
@@ -50,10 +48,10 @@ params:
   tocopen: false
 
   label:
-    text: "PR Logs"
+    text: "PR Blogs"
 
   homeInfoParams:
-    Title: "PR Logs"
+    Title: "PR Blogs"
     Content: |
       Hi, and welcome to my blog! I'm Pratosh Raj, a data scientist now exploring
       post-training for LLMs, alignment, and safety. This blog documents what I learn
