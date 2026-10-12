@@ -9,11 +9,11 @@
     <lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://pratoshraj-pr.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Generative vs Discriminative Models: From Naive Bayes to LLMs</title>
+      <title>Discriminative vs Generative Models: From Logistic Regression to LLMs</title>
       <link>https://pratoshraj-pr.github.io/posts/gen-vs-disc-ml/</link>
       <pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
       <guid>https://pratoshraj-pr.github.io/posts/gen-vs-disc-ml/</guid>
-      <description>A probabilistic lens on what each kind of model actually learns: logistic regression, Naive Bayes, and how LLMs fit the picture.</description>
+      <description>A probabilistic lens on what each kind of modelling actually learns: starting from logistic regression, Naive Bayes, to how LLMs fit the picture.</description>
     </item>
   </channel>
 </rss>
