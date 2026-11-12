@@ -5,7 +5,12 @@
 {{- end }}
 
 {{- if (.Param "ShowReadingTime") -}}
-    {{- $scratch.Add "meta" (slice (printf "<span>Estimated Reading Time: %d min</span>" .ReadingTime)) }}
+    {{- with .Params.readingTime }}
+        {{- /* front matter override, e.g. readingTime: "~1 hr (+ ~1 hr of code)" */}}
+        {{- $scratch.Add "meta" (slice (printf "<span>Estimated Reading Time: %s</span>" .)) }}
+    {{- else }}
+        {{- $scratch.Add "meta" (slice (printf "<span>Estimated Reading Time: %d min</span>" $.ReadingTime)) }}
+    {{- end }}
 {{- end }}
 
 {{- if (.Param "ShowWordCount") -}}

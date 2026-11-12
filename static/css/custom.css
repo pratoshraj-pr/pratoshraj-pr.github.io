@@ -58,10 +58,64 @@ h1, h2, h3, h4 {
   font-weight: 400;
 }
 
+/* ─── Part checkpoints ──────────────────────────────────────────────────────── *
+ * Mark the end of a part in markdown by putting {.checkpoint} on the line
+ * after the paragraph:
+ *   **✓ End of Part 1: …** …
+ *   {.checkpoint}                                                             */
+.post-content p.checkpoint {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  padding: 0.75em 1.1em;
+  margin: 2em 0 1.5em;
+  border: 1px solid var(--border);
+  border-left: 3px solid #3a9a5b;
+  border-radius: 0 6px 6px 0;
+}
+
+.post-content p.checkpoint strong {
+  color: #3a9a5b;
+}
+
 /* ─── Inline code & code blocks ─────────────────────────────────────────────── */
 code, pre, kbd, samp {
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   font-size: 0.88em;
+}
+
+/* ─── Notebook cell outputs ─────────────────────────────────────────────────── *
+ * Text output of a code cell. Write it in markdown as an ```output fence; it is
+ * rendered by layouts/_markup/render-codeblock-output.html.                    */
+.post-content .cell-output {
+  position: relative;
+  margin: -0.6em 0 var(--content-gap);   /* sit close under the code that produced it */
+}
+
+.post-content .cell-output-label {
+  position: absolute;
+  top: 0.55em;
+  left: 0.9em;
+  z-index: 1;                            /* PaperMod makes pre position:relative, which would paint over it */
+  line-height: 1;
+  user-select: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--secondary);
+  pointer-events: none;
+}
+
+.post-content .cell-output pre {
+  margin: 0;
+}
+
+.post-content .cell-output pre code {
+  padding: 2.2em 1em 0.8em;
+  color: var(--content);
+  background: var(--code-bg) !important;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--secondary);
 }
 
 /* ─── Blockquotes (TL;DR, key takeaways, asides, definitions) ───────────────── */
