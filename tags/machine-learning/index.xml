@@ -6,8 +6,15 @@
     <description>Recent content in Machine-Learning on PR Blogs</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://pratoshraj-pr.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Neural Networks from Scratch in NumPy, Verified Against PyTorch</title>
+      <link>https://pratoshraj-pr.github.io/posts/nn-from-scratch-numpy/</link>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+      <guid>https://pratoshraj-pr.github.io/posts/nn-from-scratch-numpy/</guid>
+      <description>Build and train a neural network in pure NumPy, from backprop to BatchNorm and AdamW, and match PyTorch on MNIST step for step.</description>
+    </item>
     <item>
       <title>Discriminative vs Generative Models: From Logistic Regression to LLMs</title>
       <link>https://pratoshraj-pr.github.io/posts/gen-vs-disc-ml/</link>

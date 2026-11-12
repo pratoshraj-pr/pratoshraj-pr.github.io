@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Backpropagation on PR Blogs</title>
+    <link>https://pratoshraj-pr.github.io/tags/backpropagation/</link>
+    <description>Recent content in Backpropagation on PR Blogs</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://pratoshraj-pr.github.io/tags/backpropagation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Neural Networks from Scratch in NumPy, Verified Against PyTorch</title>
+      <link>https://pratoshraj-pr.github.io/posts/nn-from-scratch-numpy/</link>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+      <guid>https://pratoshraj-pr.github.io/posts/nn-from-scratch-numpy/</guid>
+      <description>Build and train a neural network in pure NumPy, from backprop to BatchNorm and AdamW, and match PyTorch on MNIST step for step.</description>
+    </item>
+  </channel>
+</rss>

@@ -2,8 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://pratoshraj-pr.github.io/tags/backpropagation/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://pratoshraj-pr.github.io/categories/</loc>
-    <lastmod>2026-10-09T00:00:00+00:00</lastmod>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://pratoshraj-pr.github.io/tags/deep-learning/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://pratoshraj-pr.github.io/categories/machine-learning/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://pratoshraj-pr.github.io/tags/machine-learning/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://pratoshraj-pr.github.io/posts/nn-from-scratch-numpy/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://pratoshraj-pr.github.io/tags/neural-networks/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://pratoshraj-pr.github.io/tags/numpy/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://pratoshraj-pr.github.io/posts/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://pratoshraj-pr.github.io/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://pratoshraj-pr.github.io/tags/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://pratoshraj-pr.github.io/posts/gen-vs-disc-ml/</loc>
     <lastmod>2026-10-09T00:00:00+00:00</lastmod>
@@ -17,25 +47,10 @@
     <loc>https://pratoshraj-pr.github.io/tags/llms/</loc>
     <lastmod>2026-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://pratoshraj-pr.github.io/categories/machine-learning/</loc>
-    <lastmod>2026-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://pratoshraj-pr.github.io/tags/machine-learning/</loc>
-    <lastmod>2026-10-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://pratoshraj-pr.github.io/tags/nlp/</loc>
     <lastmod>2026-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://pratoshraj-pr.github.io/posts/</loc>
-    <lastmod>2026-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://pratoshraj-pr.github.io/</loc>
-    <lastmod>2026-10-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://pratoshraj-pr.github.io/tags/probability/</loc>
-    <lastmod>2026-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://pratoshraj-pr.github.io/tags/</loc>
     <lastmod>2026-10-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://pratoshraj-pr.github.io/about/</loc>
